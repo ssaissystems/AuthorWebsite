@@ -313,18 +313,18 @@
         <h2>Join the Circle</h2>
         <p>Fill in your details below to receive the latest from Dr. Shakil R. directly to your inbox.</p>
         <!-- ADDED: action and hidden form-name input to fix 404 -->
-        <form class="join-form" name="circle-signup" netlify method="POST" action="/circle.html">
-            <input type="hidden" name="form-name" value="circle-signup">
-            <div class="form-group">
-                <label for="circle-name">Your Name</label>
-                <input type="text" id="circle-name" name="name" placeholder="e.g. John Doe" required>
-            </div>
-            <div class="form-group">
-                <label for="circle-email">Your Email</label>
-                <input type="email" id="circle-email" name="email" placeholder="john@example.com" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Join the Circle</button>
-        </form>
+        <form class="join-form" name="circle-signup" method="POST" action="https://formspree.io/f/mnjearop">
+    <input type="hidden" name="_subject" value="New Readers Circle Signup">
+    <div class="form-group">
+        <label for="circle-name">Your Name</label>
+        <input type="text" id="circle-name" name="name" placeholder="e.g. John Doe" required>
+    </div>
+    <div class="form-group">
+        <label for="circle-email">Your Email</label>
+        <input type="email" id="circle-email" name="email" placeholder="john@example.com" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Join the Circle</button>
+</form>
     </div>
 </div>
 
