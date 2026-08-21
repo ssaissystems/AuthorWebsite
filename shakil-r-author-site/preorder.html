@@ -1,193 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- SEO Meta Description -->
-<!-- Primary Meta Tags -->
-<title>Pre-Order Books by Shakil R. — Shadow, Eclipse & Gentleman Rogue</title>
-<meta name="description" content="Pre-order upcoming books by Shakil R. Reserve your copy of titles from the Shadow, Eclipse, and Gentleman Rogue series. Support the author and secure first-day delivery.">
-<meta name="author" content="Shakil R.">
-<link rel="canonical" href="https://shakilr.com/preorder">
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Pre-order the upcoming thrillers by Dr. Shakil R. Get notified the moment new books go live across the Shadow, Eclipse, and Gentleman Rogue series.">
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://shakilr.com/preorder">
-<meta property="og:title" content="Pre-Order Books by Shakil R.">
-<meta property="og:description" content="Reserve your copy of upcoming thrillers from the Shadow, Eclipse, and Gentleman Rogue series. Pre-orders help support the author and guarantee early delivery.">
-<meta property="og:image" content="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/sentry-directive-cover.jpg">
-<meta property="og:image:alt" content="Pre-order books by Shakil R.">
-<meta property="og:site_name" content="Shakil R.">
+    <!-- Social Media Open Graph Tags -->
+    <meta property="og:title" content="Pre-Order — Shakil R.">
+    <meta property="og:description" content="Join the pre-order list to get notified about new releases, early access, and exclusive offers.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/myphoto.jpg">
+    <meta property="og:url" content="https://shakilr.com/preorder.html">
+    <meta name="twitter:card" content="summary_large_image">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Pre-Order Books by Shakil R.">
-<meta name="twitter:description" content="Reserve upcoming titles from the Shadow, Eclipse, and Gentleman Rogue series. Support the author and get first-day delivery.">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/sentry-directive-cover.jpg">
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Order — Shakil R.</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         .preorder-page {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 3rem 2rem;
         }
 
-        .preorder-page h1 {
+        .preorder-page > h1 {
             font-family: 'Oswald', sans-serif;
             font-weight: 700;
-            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
             text-align: center;
-            color: var(--text);
+            color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .preorder-page > .page-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
         }
 
         .preorder-section {
             background: var(--medium-bg);
-            padding: 2rem;
             border-radius: 12px;
-            margin-bottom: 1.5rem;
-            border: 1px solid var(--border-light);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .preorder-section label {
-            display: block;
-            margin: 1rem 0 0.3rem;
-            color: var(--text-muted);
-            font-family: 'Oswald', sans-serif;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
-        .preorder-section input,
-        .preorder-section select {
-            width: 100%;
-            padding: 0.8rem;
-            background: #000;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: white;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1rem;
-        }
-
-        .preorder-section input:focus,
-        .preorder-section select:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        .preorder-row {
-            display: flex;
-            gap: 10px;
-        }
-
-        .preorder-row > div {
-            flex: 1;
-        }
-
-        .price-box {
-            text-align: center;
-            padding: 1rem;
-            background: #111;
-            border-radius: 8px;
-            margin: 1rem 0;
-            font-size: 1.3rem;
-            color: var(--accent);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
             border: 1px solid var(--border-light);
         }
 
-        .total-box {
+        .preorder-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
             font-size: 1.8rem;
             color: var(--text);
-            font-weight: bold;
-            border: 2px solid var(--text);
-            background: var(--accent);
-            padding: 0.8rem;
-            border-radius: 8px;
-            text-align: center;
-            margin: 1rem 0;
+            margin-bottom: 1rem;
         }
 
-        .preorder-btn {
-            width: 100%;
-            padding: 1.2rem;
-            background: var(--accent);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            font-family: 'Oswald', sans-serif;
-            letter-spacing: 1px;
-            transition: var(--transition);
-            margin-top: 0.5rem;
-        }
-
-        .preorder-btn:hover {
-            background: var(--accent-dark);
-        }
-
-        .preorder-btn.back {
-            background: #555;
-            margin-top: 0.5rem;
-        }
-
-        .preorder-btn.back:hover {
-            background: #444;
-        }
-
-        .note-box {
-            background: rgba(0, 116, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 1rem 0;
-            text-align: center;
-            font-size: 1rem;
-            line-height: 1.6;
-            border: 1px solid rgba(0, 116, 255, 0.2);
+        .preorder-section p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.8;
             color: var(--text-muted);
+            margin-bottom: 1.5rem;
         }
 
-        .instruction-box {
-            background: #1a1a1a;
+        .preorder-form {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .preorder-form .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .preorder-form label {
+            display: block;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 300;
+            margin-bottom: 0.4rem;
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        .preorder-form input,
+        .preorder-form select {
+            width: 100%;
             padding: 0.8rem 1rem;
+            border: 1px solid var(--border);
             border-radius: 8px;
-            margin-top: 0.3rem;
-            font-size: 0.85rem;
-            color: var(--text-dim);
-            border-left: 4px solid var(--accent);
+            background: #000;
+            color: var(--text);
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
         }
 
-        .preorder-success {
-            display: none;
-            background: #4CAF50;
+        .preorder-form input:focus,
+        .preorder-form select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(0, 116, 255, 0.2);
+        }
+
+        .preorder-form .btn {
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        /* -------------------------------------------------- */
+        /* FIXED LEFT SIDEBAR NAV (Embedded for safety)       */
+        /* -------------------------------------------------- */
+        .fixed-book-nav {
+            position: fixed;
+            top: 120px;
+            left: 20px;
+            width: 220px;
+            background: var(--medium-bg);
             padding: 1.5rem;
-            margin-top: 1rem;
             border-radius: 12px;
-            text-align: center;
-            font-size: 1.3rem;
-            border: 1px solid white;
+            border: 1px solid var(--border-light);
+            z-index: 99;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
 
-        .page-hidden {
-            display: none;
+        .fixed-book-nav h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 0.8rem;
+        }
+
+        .fixed-book-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .fixed-book-nav ul li {
+            margin-bottom: 12px;
+        }
+
+        .fixed-book-nav ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        .fixed-book-nav ul li a:hover,
+        .fixed-book-nav ul li a.active {
+            color: var(--accent);
+            transform: translateX(6px);
+        }
+
+        @media (max-width: 1024px) {
+            .fixed-book-nav {
+                display: none;
+            }
         }
 
         @media (max-width: 768px) {
-            .preorder-row {
-                flex-direction: column;
-            }
+            .preorder-section { padding: 1.5rem; }
         }
     </style>
 </head>
-<body>
+<body id="top">
 
 <!-- NAVIGATION -->
 <nav class="navbar">
@@ -208,130 +193,63 @@
     </div>
 </nav>
 
+<!-- FIXED LEFT MARGIN SIDEBAR -->
+<nav class="fixed-book-nav" aria-label="Page navigation">
+    <h4>Jump to</h4>
+    <ul>
+        <li><a href="#shadow">Shadow Series</a></li>
+        <li><a href="#eclipse">Eclipse Series</a></li>
+        <li><a href="#rogue">Rogue Series</a></li>
+        <li style="border-top: 1px solid var(--border-light); padding-top: 12px; margin-top: 12px;">
+            <a href="#top" style="color: var(--accent);"><i class="fas fa-arrow-up" style="margin-right: 6px;"></i> Back to Top</a>
+        </li>
+    </ul>
+</nav>
+
 <div class="preorder-page">
-    <h1>Pre-Order Your Book</h1>
+    <h1>Pre-Order</h1>
+    <p class="page-subtitle">Be the first to know when new books go live. Join the pre-order list for exclusive updates and early access.</p>
 
-    <!-- PAGE 1: ORDER FORM -->
-    <div id="orderPage">
-        <div class="preorder-section">
-            <label>Book Title</label>
-            <select id="bookTitle">
-                <option value="">-- Select Book --</option>
-                <option value="Shadow: The SENTRY Directive">Shadow: The SENTRY Directive</option>
-                <option value="Shadow Series Book 2 (Coming Soon)">Shadow Series Book 2 (Coming Soon)</option>
-                <option value="Eclipse Series Book 1 (Coming Late 2026)">Eclipse Series Book 1 (Coming Late 2026)</option>
-                <option value="Eclipse Series Book 2 (Coming Late 2026)">Eclipse Series Book 2 (Coming Late 2026)</option>
-            </select>
-
-            <div class="preorder-row">
-                <div>
-                    <label>Version</label>
-                    <select id="version">
-                        <option value="">-- Select --</option>
-                        <option value="Paperback">Paperback (PKR 2,400)</option>
-                        <option value="Hardbound">Hardbound (PKR 3,300)</option>
-                    </select>
-                </div>
-                <div>
-                    <label>Quantity</label>
-                    <select id="quantity">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
-                </div>
+    <!-- Shadow Series -->
+    <div class="preorder-section" id="shadow">
+        <h2>The Shadow Series</h2>
+        <p>Sign up to be notified when <strong>Shadow Book 2</strong> becomes available for pre-order.</p>
+        <form class="preorder-form" name="shadow-preorder" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+            <input type="hidden" name="_subject" value="New Shadow Series Pre-Order Signup">
+            <div class="form-group">
+                <label for="shadow-email">Your Email</label>
+                <input type="email" id="shadow-email" name="email" placeholder="john@example.com" required>
             </div>
-
-            <div class="price-box" id="priceDisplay">Select a book and version to see price</div>
-            <div class="total-box" id="totalDisplay" style="display:none;">Total: PKR 0</div>
-
-            <button class="preorder-btn" onclick="goToCheckout()">Proceed to Checkout</button>
-        </div>
-
-        <div class="note-box">
-            <strong>Pre-order benefits:</strong> Reserve your copy ahead of release. You'll be notified when your book ships. Pre-orders for upcoming titles help support the author and ensure first-day delivery.
-        </div>
+            <button type="submit" class="btn btn-primary">Notify Me</button>
+        </form>
     </div>
 
-    <!-- PAGE 2: CHECKOUT FORM -->
-    <div id="checkoutPage" class="page-hidden">
-        <div class="preorder-section">
-            <h2 style="font-family: 'Oswald'; color: var(--accent); margin-bottom: 1rem; font-size: 1.5rem;">Shipping Details</h2>
-
-            <form id="preorderForm" action="https://formspree.io/f/mnjearop" method="POST">
-                <input type="hidden" name="_subject" value="New Pre-Order Request">
-                <input type="text" name="_gotcha" style="display:none;">
-                <input type="hidden" name="book_title" id="hiddenBookTitle">
-                <input type="hidden" name="version" id="hiddenVersion">
-                <input type="hidden" name="quantity" id="hiddenQuantity">
-                <input type="hidden" name="total" id="hiddenTotal">
-
-                <div class="preorder-row">
-                    <div>
-                        <label>Full Name *</label>
-                        <input type="text" name="name" required>
-                    </div>
-                    <div>
-                        <label>Phone Number *</label>
-                        <input type="tel" name="phone" required>
-                    </div>
-                </div>
-
-                <div class="preorder-row">
-                    <div>
-                        <label>Email *</label>
-                        <input type="email" name="email" required>
-                    </div>
-                    <div>
-                        <label>City *</label>
-                        <input type="text" name="city" required>
-                    </div>
-                </div>
-
-                <label>Full Shipping Address *</label>
-                <textarea name="address" rows="3" style="width:100%; padding:0.8rem; background:#000; border:1px solid var(--border); border-radius:8px; color:white; font-family:'Oswald'; font-size:1rem;" required></textarea>
-
-                <div class="preorder-row">
-                    <div>
-                        <label>Province / State *</label>
-                        <input type="text" name="province" required>
-                    </div>
-                    <div>
-                        <label>Postal Code</label>
-                        <input type="text" name="postal_code">
-                    </div>
-                </div>
-
-                <label>Payment Method</label>
-                <select name="payment_method">
-                    <option value="Bank Transfer">Bank Transfer</option>
-                    <option value="Cash on Delivery">Cash on Delivery</option>
-                    <option value="EasyPaisa">EasyPaisa</option>
-                    <option value="JazzCash">JazzCash</option>
-                </select>
-
-                <div class="instruction-box">
-                    Payment instructions will be sent to your email after order confirmation. For bank transfers, details will be provided in the confirmation email.
-                </div>
-
-                <label>Special Instructions (optional)</label>
-                <textarea name="instructions" rows="2" style="width:100%; padding:0.8rem; background:#000; border:1px solid var(--border); border-radius:8px; color:white; font-family:'Oswald'; font-size:1rem;"></textarea>
-
-                <button type="submit" class="preorder-btn">Confirm Pre-Order</button>
-                <button type="button" class="preorder-btn back" onclick="goBack()">Back</button>
-            </form>
-
-            <div id="preorderSuccess" class="preorder-success">
-                Thank you for your pre-order! We'll contact you shortly with payment and delivery details.
+    <!-- Eclipse Series -->
+    <div class="preorder-section" id="eclipse">
+        <h2>The Eclipse Series</h2>
+        <p>Sign up to be notified when <strong>The Jade Compass</strong> and the rest of the series become available for pre-order.</p>
+        <form class="preorder-form" name="eclipse-preorder" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+            <input type="hidden" name="_subject" value="New Eclipse Series Pre-Order Signup">
+            <div class="form-group">
+                <label for="eclipse-email">Your Email</label>
+                <input type="email" id="eclipse-email" name="email" placeholder="john@example.com" required>
             </div>
-        </div>
+            <button type="submit" class="btn btn-primary">Notify Me</button>
+        </form>
+    </div>
+
+    <!-- Rogue Series -->
+    <div class="preorder-section" id="rogue">
+        <h2>The Gentleman Rogue Series</h2>
+        <p>Sign up to be notified when <strong>The Echo's First Note</strong> becomes available for pre-order.</p>
+        <form class="preorder-form" name="rogue-preorder" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+            <input type="hidden" name="_subject" value="New Rogue Series Pre-Order Signup">
+            <div class="form-group">
+                <label for="rogue-email">Your Email</label>
+                <input type="email" id="rogue-email" name="email" placeholder="john@example.com" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Notify Me</button>
+        </form>
     </div>
 </div>
 
@@ -340,7 +258,7 @@
     <div class="footer-content">
         <div class="footer-section">
             <h3>ABOUT</h3>
-            <p><strong>Dr. Shakil R.,</strong> a former military aviation engineer and academic, blends decades of aerospace, defense, and global strategy experience into gripping thrillers. His debut, <strong>The SENTRY Directive,</strong> delivers authenticity and suspense, launching the Shadow Series. He is currently writing the sequel to The SENTRY Directive, the four-book archaeological thriller series <strong>ECLIPSE</strong> (premiering late 2026), and the <strong>Gentleman Rogue Series</strong> of international adventure thrillers (premiering Q3 2027).</p>
+            <p><strong>Dr. Shakil R.,</strong> a former military aviation engineer and academic, blends decades of aerospace, defense, and global strategy experience into gripping thrillers. His debut, <strong>SHADOW: The SENTRY Directive,</strong> delivers authenticity and suspense, launching the Shadow Series. He is currently writing the sequel to The SENTRY Directive, the four-book archaeological thriller series <strong>ECLIPSE</strong> (premiering late 2026), and the <strong>Gentleman Rogue Series</strong> of international adventure thrillers (premiering Q3 2027).</p>
         </div>
         <div class="footer-section">
             <h3>CONNECT</h3>
@@ -357,80 +275,10 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2026 Shakil R. All rights reserved. | Author of Shadow: The SENTRY Directive</p>
+        <p>&copy; 2025 Shakil R. | Author of Shadow: The SENTRY Directive</p>
     </div>
 </footer>
 
 <script src="js/main.js"></script>
-<script>
-const prices = {
-    'Paperback': 2400,
-    'Hardbound': 3300
-};
-
-function calc() {
-    const version = document.getElementById('version').value;
-    const quantity = parseInt(document.getElementById('quantity').value);
-
-    if (version && prices[version]) {
-        const unitPrice = prices[version];
-        const total = unitPrice * quantity;
-        document.getElementById('priceDisplay').textContent = 'Unit Price: PKR ' + unitPrice.toLocaleString();
-        document.getElementById('totalDisplay').textContent = 'Total: PKR ' + total.toLocaleString();
-        document.getElementById('totalDisplay').style.display = 'block';
-    } else {
-        document.getElementById('priceDisplay').textContent = 'Select a version to see price';
-        document.getElementById('totalDisplay').style.display = 'none';
-    }
-}
-
-document.getElementById('version').addEventListener('change', calc);
-document.getElementById('quantity').addEventListener('change', calc);
-
-function goToCheckout() {
-    const bookTitle = document.getElementById('bookTitle').value;
-    const version = document.getElementById('version').value;
-    const quantity = document.getElementById('quantity').value;
-
-    if (!bookTitle || !version) {
-        alert('Please select a book and version.');
-        return;
-    }
-
-    const total = prices[version] * parseInt(quantity);
-
-    document.getElementById('hiddenBookTitle').value = bookTitle;
-    document.getElementById('hiddenVersion').value = version;
-    document.getElementById('hiddenQuantity').value = quantity;
-    document.getElementById('hiddenTotal').value = 'PKR ' + total.toLocaleString();
-
-    document.getElementById('orderPage').classList.add('page-hidden');
-    document.getElementById('checkoutPage').classList.remove('page-hidden');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function goBack() {
-    document.getElementById('checkoutPage').classList.add('page-hidden');
-    document.getElementById('orderPage').classList.remove('page-hidden');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-document.getElementById('preorderForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    fetch(this.action, {
-        method: 'POST',
-        body: new FormData(this),
-        headers: { 'Accept': 'application/json' }
-    }).then(response => {
-        if (response.ok) {
-            this.reset();
-            document.getElementById('preorderSuccess').style.display = 'block';
-            document.getElementById('preorderSuccess').scrollIntoView({ behavior: 'smooth' });
-        }
-    }).catch(error => {
-        alert('There was an error submitting the form. Please try again.');
-    });
-});
-</script>
 </body>
 </html>
