@@ -649,31 +649,33 @@
             <p class="reviews-intro">Share your thoughts about <strong>The SENTRY Directive</strong>. Your review will be reviewed and approved before being posted on the site. Thank you for your feedback!</p>
             
             <!-- Added 'name' and 'netlify' attributes so Netlify can capture these submissions and email them to you -->
-            <form class="review-form" name="review-submission" netlify method="POST">
-                <div class="form-group">
-                    <label for="reviewer-name">Your Name (Required)</label>
-                    <input type="text" id="reviewer-name" name="name" placeholder="e.g. John Doe" required>
-                </div>
-                <div class="form-group">
-                    <label for="reviewer-email">Your Email (Required)</label>
-                    <input type="email" id="reviewer-email" name="email" placeholder="john@example.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="review-rating">Your Rating</label>
-                    <select id="review-rating" name="rating">
-                        <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
-                        <option value="4">⭐⭐⭐⭐ - Very Good</option>
-                        <option value="3">⭐⭐⭐ - Good</option>
-                        <option value="2">⭐⭐ - Fair</option>
-                        <option value="1">⭐ - Poor</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="review-content">Your Review (Required)</label>
-                    <textarea id="review-content" name="review" rows="5" placeholder="Tell us what you loved about this book..." required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit Review</button>
-            </form>
+           <form class="review-form" name="review-submission" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+    <input type="hidden" name="_subject" value="New Book Review Submission">
+    <input type="hidden" name="_replyto" value="email">
+    <div class="form-group">
+        <label for="reviewer-name">Your Name (Required)</label>
+        <input type="text" id="reviewer-name" name="name" placeholder="e.g. John Doe" required>
+    </div>
+    <div class="form-group">
+        <label for="reviewer-email">Your Email (Required)</label>
+        <input type="email" id="reviewer-email" name="email" placeholder="john@example.com" required>
+    </div>
+    <div class="form-group">
+        <label for="review-rating">Your Rating</label>
+        <select id="review-rating" name="rating">
+            <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
+            <option value="4">⭐⭐⭐⭐ - Very Good</option>
+            <option value="3">⭐⭐⭐ - Good</option>
+            <option value="2">⭐⭐ - Fair</option>
+            <option value="1">⭐ - Poor</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="review-content">Your Review (Required)</label>
+        <textarea id="review-content" name="review" rows="5" placeholder="Tell us what you loved about this book..." required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Review</button>
+</form>
 
             <!-- PLACEHOLDER FOR APPROVED REVIEWS -->
             <div id="approved-reviews-list" style="margin-top: 3rem; border-top: 1px solid var(--border-light); padding-top: 2rem;">
