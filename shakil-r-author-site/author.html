@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Dr. Shakil R. is the author of the Shadow, Eclipse, and Gentleman Rogue thriller series. A former military aviation engineer crafting authentic geopolitical and archaeological suspense.">
+
+    <!-- Social Media Open Graph Tags -->
+    <meta property="og:title" content="Shakil R. — Author of Geopolitical Thrillers">
+    <meta property="og:description" content="Former military aviation engineer and strategist, now writing thrillers where authenticity meets suspense.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/myphoto.jpg">
+    <meta property="og:url" content="https://shakilr.com/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet the Author — Shakil R.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700;800&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .author-page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .author-page h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 800;
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            text-align: center;
+            margin: 2rem 0;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .author-section {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+
+        .author-image {
+            flex: 0 0 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 116, 255, 0.2);
+        }
+
+        .author-image img,
+        .author-image object {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-intro {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .author-intro strong {
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .full-width-content {
+            width: 100%;
+        }
+
+        .full-width-content p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .full-width-content p strong {
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin: 2rem 0;
+        }
+
+        .series-list {
+            margin: 2rem 0;
+        }
+
+        .series-list h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .series-item {
+            background: var(--medium-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .series-item.eclipse { border-left-color: var(--eclipse); }
+        .series-item.rogue { border-left-color: var(--rogue); }
+
+        .series-item h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .series-item .series-premiere {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .series-item p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .conclusion {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.7;
+            background: var(--medium-bg);
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            color: var(--text);
+            margin-top: 2rem;
+        }
+
+        /* -------------------------------------------------- */
+        /* FIXED LEFT SIDEBAR NAV (Embedded for safety)       */
+        /* -------------------------------------------------- */
+        .fixed-book-nav {
+            position: fixed;
+            top: 120px;
+            left: 20px;
+            width: 220px;
+            background: var(--medium-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            z-index: 99;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .fixed-book-nav h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 0.8rem;
+        }
+
+        .fixed-book-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .fixed-book-nav ul li {
+            margin-bottom: 12px;
+        }
+
+        .fixed-book-nav ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        .fixed-book-nav ul li a:hover,
+        .fixed-book-nav ul li a.active {
+            color: var(--accent);
+            transform: translateX(6px);
+        }
+
+        @media (max-width: 1024px) {
+            .fixed-book-nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .author-section {
+                flex-direction: column;
+            }
+            .author-image {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body id="top">
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-brand">SHAKIL <span>R.</span></a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="author.html" class="active">Author</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="circle.html">The Circle</a></li>
+            <li><a href="preorder.html">Pre-Order</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- FIXED LEFT MARGIN SIDEBAR -->
+<nav class="fixed-book-nav" aria-label="Page navigation">
+    <h4>Jump to</h4>
+    <ul>
+        <li><a href="#overview">Author Overview</a></li>
+        <li><a href="#career">Career & Background</a></li>
+        <li><a href="#fiction">Writing Fiction</a></li>
+        <li><a href="#series-list">The Series</a></li>
+        <li style="border-top: 1px solid var(--border-light); padding-top: 12px; margin-top: 12px;">
+            <a href="#top" style="color: var(--accent);"><i class="fas fa-arrow-up" style="margin-right: 6px;"></i> Back to Top</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="author-page">
+    <h1>Meet the Author — Shakil R.</h1>
+
+    <!-- ID: Author Overview -->
+    <div class="author-section" id="overview">
+        <div class="author-image">
+            <!-- UPDATED: Direct URL to myphoto.jpg, styled as a circle -->
+            <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/myphoto.jpg" alt="Dr. Shakil R." style="border-radius: 50%; border: 3px solid var(--accent); object-fit: cover; aspect-ratio: 1 / 1;">
+        </div>
+        <div class="author-info">
+            <p class="author-intro"><strong>Dr. Shakil R.</strong> is a former Pakistan Air Force aerospace engineer, academic, and strategist whose career has spanned aerospace design, defense programs, and higher education. He was a distinguished one-star officer in the Engineering branch of the Pakistan Air Force, retiring at the rank of Air Commodore (equivalent to a Brigadier General).</p>
+        </div>
+    </div>
+
+    <!-- ID: Career & Background -->
+    <div class="full-width-content" id="career">
+        <p>With a Ph.D. in Computational Fluid Dynamics from <strong>Beihang University</strong>, China, and a Master's in Flight Dynamics & Control Systems from the <strong>University of Texas at Austin</strong>, he has served in roles ranging from Engineering Officer in fighter squadrons to Professor and Head of Department, to Commandant of the College of Aeronautical Engineering, and later as Deputy Chief Project Director (Aero) for the JF-17 Project. His work has taken him from the JF-17 aircraft design team in China to leading-edge sustainability and energy projects in Pakistan.</p>
+
+        <hr class="divider">
+
+        <p>Across four decades, he has combined engineering precision with strategic vision, contributing to aerospace innovation, sustainable energy solutions, and international collaborations. He has published extensively in leading scientific journals, submitted patents in renewable technologies, and founded Smart Green Solutions, a startup dedicated to sustainable energy and education.</p>
+    </div>
+
+    <!-- ID: Writing Fiction -->
+    <div class="full-width-content" id="fiction">
+        <hr class="divider">
+        <p>Today, he is channeling this unique blend of passion and expertise into fiction. His debut geopolitical thriller, <strong>SHADOW: The SENTRY Directive</strong>, has been described as "a strategic wake-up call disguised as a thriller," praised for its authenticity, heart, and thought-provoking vision of peace in a fractured world. Drawing on his insider knowledge of aviation, defense, diplomacy, and global strategy, Shakil R. writes with the precision of an engineer and the imagination of a storyteller.</p>
+
+        <hr class="divider">
+
+        <p>Influenced in his youth by the adventures of Captain W.E. Johns and the deductive brilliance of Sir Arthur Conan Doyle, and later inspired by masters of the modern thriller such as Tom Clancy, Frederick Forsyth, Robert Ludlum, Dan Brown, and Steve Berry, Shakil R. has developed a storytelling style that combines authenticity, suspense, and cinematic pacing.</p>
+    </div>
+
+    <!-- ID: The Series -->
+    <div class="series-list" id="series-list">
+        <hr class="divider">
+        <h2>His work now spans three distinct thriller series:</h2>
+
+        <div class="series-item">
+            <h3>The Shadow Series</h3>
+            <div class="series-premiere">Book 1 Now Available on Amazon</div>
+            <p>Intelligent geopolitical thrillers exploring diplomacy, espionage, military strategy, and the pursuit of peace in an increasingly unstable world.</p>
+        </div>
+
+        <div class="series-item eclipse">
+            <h3>The Eclipse Series</h3>
+            <div class="series-premiere">Series Premieres Late 2026</div>
+            <p>Archaeological thrillers where ancient mysteries, forgotten civilizations, and cutting-edge science collide across continents and centuries. Four books planned, with two now in final polish.</p>
+        </div>
+
+        <div class="series-item rogue">
+            <h3>The Gentleman Rogue Series</h3>
+            <div class="series-premiere">Series Premieres Q3 2027</div>
+            <p>Sophisticated international adventure thrillers featuring art, history, intrigue, and elegant rogues navigating a world of high society and hidden agendas.</p>
+        </div>
+    </div>
+
+    <div class="full-width-content">
+        <p>Together, these series reflect his belief that great thrillers should not only entertain but also inspire curiosity, challenge assumptions, and illuminate the complex forces shaping our world.</p>
+
+        <hr class="divider">
+
+        <p>A life shaped by conflict, innovation, leadership, and global collaboration has prepared him for this new chapter. Whether exploring the fragile balance of international diplomacy, uncovering secrets buried beneath ancient civilizations, or following daring adventures through the world's great cities, Shakil R. invites readers into stories where intelligence, courage, and humanity stand against greed, chaos, and ambition.</p>
+
+        <div class="conclusion">
+            "A strategic wake-up call disguised as a thriller" — on <strong>The SENTRY Directive</strong>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>ABOUT</h3>
+            <p><strong>Dr. Shakil R.,</strong> a former military aviation engineer and academic, blends decades of aerospace, defense, and global strategy experience into gripping thrillers. His debut, <strong>SHADOW: The SENTRY Directive,</strong> delivers authenticity and suspense, launching the Shadow Series. He is currently writing the sequel to The SENTRY Directive, the four-book archaeological thriller series <strong>ECLIPSE</strong> (premiering late 2026), and the <strong>Gentleman Rogue Series</strong> of international adventure thrillers (premiering Q3 2027).</p>
+        </div>
+        <div class="footer-section">
+            <h3>CONNECT</h3>
+            <div class="socials">
+                <a href="https://www.facebook.com/Dr.ShakilR.Sheikh" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/shakilrauthor" target="_blank" title="X (Twitter)"><span class="x-icon">X</span></a>
+                <a href="https://www.instagram.com/shakilrauthor" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>CONTACT</h3>
+            <p>For media inquiries, events, or speaking engagements:</p>
+            <p>shakilr@shakilr.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Shakil R. | Author of Shadow: The SENTRY Directive</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

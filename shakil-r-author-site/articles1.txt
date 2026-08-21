@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles & Publications — Shakil R.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .articles-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .articles-page > h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            text-align: center;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .articles-page > .page-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .category-tab {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 10px 24px;
+            border-radius: 30px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .category-tab:hover,
+        .category-tab.active {
+            background: var(--accent);
+            color: var(--text);
+            border-color: var(--accent);
+        }
+
+        /* Articles Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .article-card {
+            background: var(--medium-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 116, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .article-card a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .article-thumb {
+            aspect-ratio: 16 / 9;
+            background: linear-gradient(135deg, #0a0a1a, #050d1f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-thumb .thumb-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            opacity: 0.4;
+        }
+
+        .article-thumb .thumb-type {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 12px;
+            background: rgba(0, 116, 255, 0.15);
+            color: var(--accent);
+            border: 1px solid rgba(0, 116, 255, 0.2);
+        }
+
+        .article-body {
+            padding: 1.2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-body h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .article-body .article-meta {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+        }
+
+        .article-body .article-source {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            flex: 1;
+        }
+
+        .article-body .article-link {
+            margin-top: 12px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.85rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .article-body .article-link i {
+            font-size: 0.7rem;
+        }
+
+        @media (max-width: 768px) {
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-brand">SHAKIL <span>R.</span></a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="author.html">Author</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="circle.html">The Circle</a></li>
+            <li><a href="preorder.html">Pre-Order</a></li>
+            <li><a href="articles.html" class="active">Articles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="articles-page">
+    <h1>Articles & Publications</h1>
+    <p class="page-subtitle">Research publications, opinion pieces, and defence journal articles by Dr. Shakil R.</p>
+
+    <!-- Category Tabs -->
+    <div class="category-tabs">
+        <button class="category-tab active" onclick="filterArticles('all', this)">All</button>
+        <button class="category-tab" onclick="filterArticles('opinion', this)">Opinion Pieces</button>
+        <button class="category-tab" onclick="filterArticles('journal', this)">Journals</button>
+        <button class="category-tab" onclick="filterArticles('conference', this)">Conferences</button>
+        <button class="category-tab" onclick="filterArticles('seminar', this)">Seminars</button>
+        <button class="category-tab" onclick="filterArticles('editorial', this)">Editorial</button>
+    </div>
+
+    <!-- Articles Grid -->
+    <div class="articles-grid" id="articlesGrid">
+
+        <!-- OPINION PIECES -->
+        <div class="article-card" data-category="opinion">
+            <a href="https://www.defencejournal.com/2026/05/04/from-the-cockpit-to-the-shadows/" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Opinion</span>
+                    <i class="fas fa-newspaper thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>From the Cockpit to the Shadows</h3>
+                    <div class="article-meta">May 2026 · Defence Journal</div>
+                    <p class="article-source">An in-depth interview about the journey from military aviation to thriller fiction.</p>
+                    <span class="article-link">Read Article <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="opinion">
+            <a href="https://www.defencejournal.com/author/air-cdre-retd-dr-shakil-r-sheikh/" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Opinion</span>
+                    <i class="fas fa-newspaper thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>All Defence Journal Articles</h3>
+                    <div class="article-meta">Defence Journal · Author Page</div>
+                    <p class="article-source">Browse all opinion pieces and articles by Dr. Shakil R. on the Defence Journal.</p>
+                    <span class="article-link">View All <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <!-- JOURNAL PUBLICATIONS -->
+        <div class="article-card" data-category="journal">
+            <a href="https://doi.org/10.1109/ACCESS.2023.3279489" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-microchip thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Accuracy Improvement of Non-Intrusive Load Monitoring Using Voting-Based Consensus Clustering</h3>
+                    <div class="article-meta">2023 · IEEE Access · IF: 3.476</div>
+                    <p class="article-source">M. Ghaffar, S. R. Sheikh, N. Naseer, S. A. Usama, B. Salah, S. A. K. Alkhatib</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="https://doi.org/10.1016/j.est.2022.106298" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-battery-three-quarters thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>A Novel Convolutional Informer Network for State-of-Charge Estimation of Lithium-Ion Batteries</h3>
+                    <div class="article-meta">2023 · Journal of Energy Storage · IF: 8.907</div>
+                    <p class="article-source">R. Zou, Y. Duan, Y. Wang, J. Pang, F. Liu, S. R. Sheikh</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="https://doi.org/10.3390/en15176356" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-temperature-high thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Experimental Thermal Response Study of Multilayered, Encapsulated, PCM-Integrated Building Materials</h3>
+                    <div class="article-meta">2022 · Energies · IF: 3.252</div>
+                    <p class="article-source">A. U. Rehman, S. R. Sheikh, Z. Kausar, M. Grimes, S. J. McCormack</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="https://doi.org/10.3390/s22114036" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-wave-square thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Non-Intrusive Load Monitoring of Building Using Spectral Clustering</h3>
+                    <div class="article-meta">2022 · Sensors · IF: 3.576</div>
+                    <p class="article-source">M. Ghaffar, S. R. Sheikh, N. Naseer, Z. Mohy Ud Din, H. Z. U. Rehman, M. Naved</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="https://doi.org/10.3390/en14134032" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-bricks thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Numerical Simulation of a Novel Dual Layered Phase Change Material Brick Wall</h3>
+                    <div class="article-meta">2021 · Energies · IF: 3.004</div>
+                    <p class="article-source">A. U. Rehman, S. R. Sheikh, Z. Kausar, S. J. McCormack</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="https://doi.org/10.3390/en14123544" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-house-user thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Hot Climate Low-Cost Low-Energy Eco-Friendly Building Envelope with Embedded Phase Change Material</h3>
+                    <div class="article-meta">2021 · Energies · IF: 2.702</div>
+                    <p class="article-source">A. U. Rehman, N. Ghafoor, S. R. Sheikh, Z. Kausar, F. Rauf, F. Sher, M. F. Shah, H. Yaqoob</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="https://doi.org/10.3390/en14113160" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-mountain thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>A Low-Cost Sustainable Energy Solution for Pristine Mountain Areas of Developing Countries</h3>
+                    <div class="article-meta">2021 · Energies · IF: 2.702</div>
+                    <p class="article-source">S. R. Sheikh, S. H. R. Shah, U. Rauf, F. Rauf, Z. Kausar, U. Aziz, M. F. Shah, H. Yaqoob, M. B. K. Niazi</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="https://doi.org/10.1016/j.bspc.2021.102627" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-wheelchair thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Patient's Intention Detection and Control for Sit-Stand Mechanism of an Assistive Device for Paraplegics</h3>
+                    <div class="article-meta">2021 · Biomedical Signal Processing and Control · IF: 3.137</div>
+                    <p class="article-source">A. Abdullah, Z. Kausar, A. Hameed, S. R. Sheikh, H. Khan</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="http://dx.doi.org/10.4038/jnsfsr.v49i4.9476" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-radiation thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Energy Deposition and Dose Enhancement Using Monte Carlo Derivative Sampling: Applications in Brachytherapy</h3>
+                    <div class="article-meta">2021 · J. Natn. Sci. Foundation Sri Lanka · IF: 0.515</div>
+                    <p class="article-source">H. Khan, Z. U. Koreshi, U. Aziz, S. R. Sheikh, S. A. Ahmad</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="https://doi.org/10.3390/pr9091547" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-industry thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Feedback Control of Melt Pool Area in Selective Laser Melting Additive Manufacturing Process</h3>
+                    <div class="article-meta">2021 · Processes · IF: 2.847</div>
+                    <p class="article-source">S. Z. Hussain, Z. Kausar, Z. U. Koreshi, S. R. Sheikh, H. Z. U. Rehman, H. Yaqoob, M. F. Shah, A. Abdullah, F. Sher</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="http://doi.org/10.4038/jnsfsr.v49i2.9349" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-bomb thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Characteristic Photon Yields from Thermal Neutron Activation of Explosives for a Portable Detection System</h3>
+                    <div class="article-meta">2021 · J. Natn. Sci. Foundation Sri Lanka · IF: 0.515</div>
+                    <p class="article-source">H. Khan, Z. U. Koreshi, S. R. Sheikh, M. Y. Khan</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="http://dx.doi.org/10.4038/jnsfsr.v52i1.11652" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-atom thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Optimal Fissile Distribution in Multiplying Systems: Monte Carlo Simulation and Pontryagin's Maximum Principle</h3>
+                    <div class="article-meta">2024 · J. Natn. Sci. Foundation Sri Lanka · IF: 0.500</div>
+                    <p class="article-source">H. Khan, U. Aziz, Z. U. Koreshi, S. R. Sheikh</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="https://doi.org/10.1016/j.heliyon.2024.e25343" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-atom thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Non-Uniform Fuel Distribution and Thermo-Mechanical Analysis of a 1 MW Thermal Power Micronuclear Heat Pipe Reactor</h3>
+                    <div class="article-meta">2024 · Heliyon · IF: 3.776</div>
+                    <p class="article-source">U. Aziz, Z. U. Koreshi, H. Khan, S. R. Sheikh</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="https://doi.org/10.2298/NTRP2003208A" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-rocket thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>A Study of Criticality and Thermal Loading in a Conceptual Micronuclear Heat Pipe Reactor for Space Applications</h3>
+                    <div class="article-meta">2020 · Nuclear Technology and Radiation Protection · IF: 0.614</div>
+                    <p class="article-source">U. Aziz, Z. U. Koreshi, S. R. Sheikh, H. Khan</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="https://doi.org/10.2514/1.22775" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-plane thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Robust Design of an Aerodynamic Compensation Pitot-Static Tube for Supersonic Aircraft</h3>
+                    <div class="article-meta">2007 · Journal of Aircraft · IF: 0.475</div>
+                    <p class="article-source">A. Latif, J. Masud, S. R. Sheikh, K. Parvez</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="https://doi.org/10.1016/S1270-9638(00)86426-3" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-wind thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Dynamic Stall Suppression on an Oscillating Airfoil by Steady and Unsteady Tangential Blowing</h3>
+                    <div class="article-meta">1999 · Aerospace Science and Technology · IF: 0.301</div>
+                    <p class="article-source">M. Sun, S. R. Sheikh</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="https://tj.uettaxila.edu.pk/index.php/technical-journal/article/view/1313" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-water thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>A Novel Blade-Pitching Mechanism Design and Testing for Micro Vertical-Axis Water Turbines</h3>
+                    <div class="article-meta">2020 · Technical Journal</div>
+                    <p class="article-source">S. R. Sheikh, Z. U. Koreshi, U. Rauf, S. Khalil, U. Aziz</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="http://researcherslinks.com/current-issues/MITIGATING-CO2-EMISSIONS/31/5/3275" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-smog thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Mitigating CO₂ Emissions of Academic Buildings in Pakistan Using Energy Conservation Techniques</h3>
+                    <div class="article-meta">2019 · Journal of Engineering and Applied Sciences</div>
+                    <p class="article-source">S. R. Sheikh, Z. U. Koreshi, N. Ghafoor, M. S. Khalil, M. Ghaffar</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="https://doi.org/10.1080/14480220.2019.1639288" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-graduation-cap thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Emerging Smart Community Concept and Microgrid Technology — A Study of Lagging Skill Development in Pakistan</h3>
+                    <div class="article-meta">2019 · International Journal of Training Research</div>
+                    <p class="article-source">S. R. Sheikh, H. Sheikh, Z. U. Koreshi</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="https://doi.org/10.24949/njes.v1i1.28" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-wind thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>2D Large Eddy Simulation of Turbulent Boundary Flow around a Controlled-Diffusion Wing Section</h3>
+                    <div class="article-meta">2008 · NUST Journal of Engineering Sciences</div>
+                    <p class="article-source">O. A. Qazi, R. Prosser, S. R. Sheikh, J. Masud</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="journal">
+            <a href="https://doi.org/10.24949/njes.v1i1.74" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Journal</span>
+                    <i class="fas fa-wind thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Separation Control on Oscillating Airfoils Using Moving Surface Control</h3>
+                    <div class="article-meta">2008 · NUST Journal of Engineering Sciences</div>
+                    <p class="article-source">S. R. Sheikh, O. A. Qazi</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <!-- CONFERENCE PAPERS -->
+        <div class="article-card" data-category="conference">
+            <a href="https://doi.org/10.2514/6.2023-2174" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Conference</span>
+                    <i class="fas fa-water thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Behavior Analysis of Vertical Axis Water Turbine with Individual Blade Pitch Control</h3>
+                    <div class="article-meta">2023 · AIAA · Green Engineering I</div>
+                    <p class="article-source">F. Khan, S. R. Sheikh, J. Masud</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="conference">
+            <a href="https://doi.org/10.1109/AIMS52415.2021.9466031" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Conference</span>
+                    <i class="fas fa-house-signal thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Assistive Smart Home Environment Using Head Gestures and EEG Eye Blink Control Schemes</h3>
+                    <div class="article-meta">2021 · IEEE AIMS, Bandung, Indonesia</div>
+                    <p class="article-source">M. Ghaffar, S. R. Sheikh, N. Naseer, F. Ahmed</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="conference">
+            <a href="https://doi.org/10.1109/ICRAI47710.2019.8967381" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Conference</span>
+                    <i class="fas fa-bolt thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Electrical Energy Management of Building Using Fuzzy Control</h3>
+                    <div class="article-meta">2019 · ICRAI</div>
+                    <p class="article-source">M. Ghaffar, N. Naseer, S. R. Sheikh, M. Naved, U. Aziz, Z. U. Koreshi</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="conference">
+            <a href="https://doi.org/10.2514/6.2008-254" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Conference</span>
+                    <i class="fas fa-plane thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Adjustment of Aerodynamic Compensation Characteristics of a Pitot Tube by Rear-Body Shape Manipulation</h3>
+                    <div class="article-meta">2008 · 46th AIAA Aerospace Sciences Meeting, Reno, Nevada</div>
+                    <p class="article-source">J. Masud, O. A. Qazi, S. R. Sheikh, K. Parvez</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="conference">
+            <a href="https://doi.org/10.2514/6.2006-3691" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Conference</span>
+                    <i class="fas fa-wind thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Effects of Different Thickness Variation Strategies on Dynamic Stall in an Oscillating Airfoil</h3>
+                    <div class="article-meta">2006 · 3rd AIAA Flow Control Conference, San Francisco</div>
+                    <p class="article-source">H. R. Hamdani, R. Riaz, H. Qureshi, S. R. Sheikh, P. Khalid, M. Ali</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+        <div class="article-card" data-category="conference">
+            <a href="https://doi.org/10.2514/6.2006-1385" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Conference</span>
+                    <i class="fas fa-plane thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Novel Aerodynamic Compensation Pitot-Static Tube for Subsonic and Supersonic Flight Regimes</h3>
+                    <div class="article-meta">2006 · 44th AIAA Aerospace Sciences Meeting</div>
+                    <p class="article-source">A. Latif, J. Masud, S. Sheikh, K. Parvez, O. A. Qazi, H. Qureshi</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <!-- SEMINAR TALKS -->
+        <div class="article-card" data-category="seminar">
+            <a href="https://soa.csu.edu.cn/info/1033/5724.htm" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Seminar</span>
+                    <i class="fas fa-chalkboard-teacher thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Sustainable Energy Solutions</h3>
+                    <div class="article-meta">June 2022 · Central South University, P.R. China</div>
+                    <p class="article-source">Invited seminar talk on sustainable energy solutions.</p>
+                    <span class="article-link">View Talk <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <!-- EDITORIAL -->
+        <div class="article-card" data-category="editorial">
+            <a href="https://tvet-online.asia/14/" target="_blank">
+                <div class="article-thumb">
+                    <span class="thumb-type">Editorial</span>
+                    <i class="fas fa-edit thumb-icon"></i>
+                </div>
+                <div class="article-body">
+                    <h3>Preparing TVET Personnel to Achieve Sustainable Development Goals</h3>
+                    <div class="article-meta">2019 · TVET@Asia, Issue 14</div>
+                    <p class="article-source">M. Pavlova, Y. K. R. Ng, S. R. Sheikh, M. Arsat</p>
+                    <span class="article-link">View Editorial <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>ABOUT</h3>
+            <p><strong>Dr. Shakil R.,</strong> a former military aviation engineer and academic, blends decades of aerospace, defense, and global strategy experience into gripping thrillers. His debut, <strong>SHADOW: The SENTRY Directive,</strong> delivers authenticity and suspense, launching the Shadow Series. He is currently writing the sequel to The SENTRY Directive, the four-book archaeological thriller series <strong>ECLIPSE</strong> (premiering late 2026), and the <strong>Gentleman Rogue Series</strong> of international adventure thrillers (premiering Q3 2027).</p>
+        </div>
+        <div class="footer-section">
+            <h3>CONNECT</h3>
+            <div class="socials">
+                <a href="https://www.facebook.com/Dr.ShakilR.Sheikh" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/shakilrauthor" target="_blank" title="X (Twitter)"><span class="x-icon">X</span></a>
+                <a href="https://www.instagram.com/shakilrauthor" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>CONTACT</h3>
+            <p>For media inquiries, events, or speaking engagements:</p>
+            <p>shakilr@shakilr.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Shakil R. | Author of Shadow: The SENTRY Directive</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+function filterArticles(category, btn) {
+    // Update active tab
+    document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Filter cards
+    document.querySelectorAll('.article-card').forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+            card.style.display = '';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+</script>
+</body>
+</html>

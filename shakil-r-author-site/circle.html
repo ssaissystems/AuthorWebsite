@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Join the Readers Circle for Shakil R. Get exclusive updates, behind-the-scenes insights, early access to new thrillers, and a community of thriller enthusiasts.">
+
+    <!-- Social Media Open Graph Tags -->
+    <meta property="og:title" content="The Readers Circle — Shakil R.">
+    <meta property="og:description" content="Join the circle to receive exclusive updates, behind-the-scenes content, and advance news on the Shadow, Eclipse, and Gentleman Rogue series.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/myphoto.jpg">
+    <meta property="og:url" content="https://shakilr.com/circle.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Readers Circle — Shakil R.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .circle-page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .circle-page > h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            text-align: center;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .circle-page > .page-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Circle Sections */
+        .circle-intro {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .circle-intro h2 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 2rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .circle-intro p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* Benefits Section */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-card {
+            background: var(--medium-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 116, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .benefit-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .benefit-card p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Join Form */
+        .join-section {
+            background: var(--medium-bg);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            border: 1px solid var(--border-light);
+            text-align: center;
+        }
+
+        .join-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 2rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .join-section p {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .join-form {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .join-form .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .join-form label {
+            display: block;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 300;
+            margin-bottom: 0.4rem;
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        .join-form input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: #000;
+            color: var(--text);
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .join-form input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(0, 116, 255, 0.2);
+        }
+
+        .join-form .btn {
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        /* -------------------------------------------------- */
+        /* FIXED LEFT SIDEBAR NAV (Embedded for safety)       */
+        /* -------------------------------------------------- */
+        .fixed-book-nav {
+            position: fixed;
+            top: 120px;
+            left: 20px;
+            width: 220px;
+            background: var(--medium-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            z-index: 99;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .fixed-book-nav h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 0.8rem;
+        }
+
+        .fixed-book-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .fixed-book-nav ul li {
+            margin-bottom: 12px;
+        }
+
+        .fixed-book-nav ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        .fixed-book-nav ul li a:hover,
+        .fixed-book-nav ul li a.active {
+            color: var(--accent);
+            transform: translateX(6px);
+        }
+
+        @media (max-width: 1024px) {
+            .fixed-book-nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body id="top">
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-brand">SHAKIL <span>R.</span></a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="author.html">Author</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="circle.html" class="active">The Circle</a></li>
+            <li><a href="preorder.html">Pre-Order</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- FIXED LEFT MARGIN SIDEBAR -->
+<nav class="fixed-book-nav" aria-label="Page navigation">
+    <h4>Jump to</h4>
+    <ul>
+        <li><a href="#welcome">Welcome</a></li>
+        <li><a href="#benefits">Circle Benefits</a></li>
+        <li><a href="#join">Join the Circle</a></li>
+        <li style="border-top: 1px solid var(--border-light); padding-top: 12px; margin-top: 12px;">
+            <a href="#top" style="color: var(--accent);"><i class="fas fa-arrow-up" style="margin-right: 6px;"></i> Back to Top</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="circle-page">
+    <h1>The Readers Circle</h1>
+    <p class="page-subtitle">An inner circle for readers, explorers, and lovers of high-stakes thrillers.</p>
+
+    <!-- ID: Welcome -->
+    <div class="circle-intro" id="welcome">
+        <h2>Welcome to the Circle</h2>
+        <p>Welcome to the inner sanctum. The Readers Circle is more than just a newsletter—it's a gathering place for readers who crave authentic geopolitical intrigue, ancient mysteries, and stylish global adventures.</p>
+        <p>By joining, you'll receive exclusive insights into Dr. Shakil R.'s writing process, early sneak peeks at new covers, and updates on future releases across the Shadow, Eclipse, and Gentleman Rogue series.</p>
+    </div>
+
+    <!-- ID: Benefits -->
+    <div id="benefits">
+        <h2 style="text-align: center; font-family: 'Oswald', sans-serif; font-size: 2rem; color: var(--text); margin-bottom: 1rem;">What You Get</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <i class="fas fa-envelope-open-text"></i>
+                <h3>Exclusive Updates</h3>
+                <p>Be the first to know about new books, pre-order announcements, and upcoming events—before anyone else.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-users"></i>
+                <h3>Behind-the-Scenes</h3>
+                <p>Dive into the research, character deep-dives, and the real-world geopolitics that inspire the thrillers.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-gift"></i>
+                <h3>Reader Rewards</h3>
+                <p>Access to exclusive giveaways, signed copies, and digital extras only available to members of the Circle.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ID: Join -->
+      <div class="join-section" id="join">
+        <h2>Join the Circle</h2>
+        <p>Fill in your details below to receive the latest from Dr. Shakil R. directly to your inbox.</p>
+        <!-- ADDED: action and hidden form-name input to fix 404 -->
+        <form class="join-form" name="circle-signup" netlify method="POST" action="/circle.html">
+            <input type="hidden" name="form-name" value="circle-signup">
+            <div class="form-group">
+                <label for="circle-name">Your Name</label>
+                <input type="text" id="circle-name" name="name" placeholder="e.g. John Doe" required>
+            </div>
+            <div class="form-group">
+                <label for="circle-email">Your Email</label>
+                <input type="email" id="circle-email" name="email" placeholder="john@example.com" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Join the Circle</button>
+        </form>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>ABOUT</h3>
+            <p><strong>Dr. Shakil R.,</strong> a former military aviation engineer and academic, blends decades of aerospace, defense, and global strategy experience into gripping thrillers. His debut, <strong>SHADOW: The SENTRY Directive,</strong> delivers authenticity and suspense, launching the Shadow Series. He is currently writing the sequel to The SENTRY Directive, the four-book archaeological thriller series <strong>ECLIPSE</strong> (premiering late 2026), and the <strong>Gentleman Rogue Series</strong> of international adventure thrillers (premiering Q3 2027).</p>
+        </div>
+        <div class="footer-section">
+            <h3>CONNECT</h3>
+            <div class="socials">
+                <a href="https://www.facebook.com/Dr.ShakilR.Sheikh" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/shakilrauthor" target="_blank" title="X (Twitter)"><span class="x-icon">X</span></a>
+                <a href="https://www.instagram.com/shakilrauthor" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>CONTACT</h3>
+            <p>For media inquiries, events, or speaking engagements:</p>
+            <p>shakilr@shakilr.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Shakil R. | Author of Shadow: The SENTRY Directive</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO Meta Description -->
+    <meta name="description" content="The Echo's First Note — Gentleman Rogue Book 1 by Shakil R. A Gentleman Rogue Thriller of Art, Elegance, and the Finest Disguise.">
+
+    <!-- Social Media Open Graph Tags -->
+    <meta property="og:title" content="The Echo's First Note — Gentleman Rogue Book 1 | Shakil R.">
+    <meta property="og:description" content="The Saint meets Arsène Lupin in a high-stakes caper with the tech of Mission: Impossible and the wit of Jeeves & Wooster.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/rogue-1-front-cover.jpg">
+    <meta property="og:url" content="https://shakilr.com/the-echos-first-note.html">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Echo's First Note — Gentleman Rogue Book 1 | Shakil R.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* -------------------------------------------------- */
+        /* FIXED LEFT SIDEBAR NAV                            */
+        /* -------------------------------------------------- */
+        .fixed-book-nav {
+            position: fixed;
+            top: 120px;
+            left: 20px;
+            width: 220px;
+            background: var(--medium-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            z-index: 99;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .fixed-book-nav h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 0.8rem;
+        }
+
+        .fixed-book-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .fixed-book-nav ul li {
+            margin-bottom: 12px;
+        }
+
+        .fixed-book-nav ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        .fixed-book-nav ul li a:hover,
+        .fixed-book-nav ul li a.active {
+            color: var(--accent);
+            transform: translateX(6px);
+        }
+
+        @media (max-width: 1024px) {
+            .fixed-book-nav {
+                display: none;
+            }
+        }
+
+        /* -------------------------------------------------- */
+        /* MAIN BOOK PAGE CONTENT                            */
+        /* -------------------------------------------------- */
+        .book-page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .book-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .book-header .series-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .book-header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .book-header .subtitle {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: var(--text-muted);
+        }
+
+        .book-content {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .book-cover-side {
+            flex: 0 0 350px;
+            text-align: center;
+        }
+
+        .book-cover-side img {
+            max-width: 320px;
+            width: 100%;
+            border-radius: 6px;
+            box-shadow: 0 0 30px rgba(0, 116, 255, 0.3);
+        }
+
+        .book-cover-3d {
+            margin-top: 1.5rem;
+        }
+
+        .book-cover-3d img {
+            max-width: 350px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            border-radius: 4px;
+        }
+
+        .book-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .book-info h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1.6rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .book-info > p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .synopsis {
+            background: var(--medium-bg);
+            padding: 1.5rem 2rem;
+            border-left: 4px solid var(--accent);
+            margin: 1.5rem 0 0 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .synopsis p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .synopsis p:last-child { margin-bottom: 0; }
+
+        .characters-section {
+            margin-top: 2.5rem;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .character-card {
+            background: var(--medium-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 20px rgba(0, 116, 255, 0.15);
+        }
+
+        .character-card h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .character-card p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        .buy-section {
+            background: var(--medium-bg);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border: 1px solid var(--border-light);
+        }
+
+        .buy-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .buy-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .buy-link.active {
+            background: var(--accent);
+            color: var(--text);
+        }
+
+        .buy-link.active:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 116, 255, 0.4);
+        }
+
+        .buy-link.dormant {
+            background: #1a1a1a;
+            color: #555;
+            border: 1px solid #333;
+            cursor: not-allowed;
+        }
+
+        .buy-link.dormant::after {
+            content: 'Soon';
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            background: #333;
+            border-radius: 10px;
+            margin-left: 4px;
+        }
+
+        .interview-link {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(0, 116, 255, 0.08);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 116, 255, 0.15);
+        }
+
+        .interview-link a {
+            color: var(--accent);
+            font-size: 0.95rem;
+            word-break: break-all;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--medium-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 116, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .testimonial-card .quote-mark {
+            font-size: 2rem;
+            color: var(--accent);
+            opacity: 0.3;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-card p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .testimonial-card .reviewer {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .reviews-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--medium-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+        }
+
+        .reviews-intro {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title-main {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 2rem;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .section-title-main.left {
+            text-align: left;
+        }
+
+        .interview-link h3, 
+        .testimonials-section h3, 
+        .reviews-section h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 2rem;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .book-content { flex-direction: column; }
+            .book-cover-side { margin: 0 auto; }
+            .character-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-brand">SHAKIL <span>R.</span></a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="author.html">Author</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="circle.html">The Circle</a></li>
+            <li><a href="preorder.html">Pre-Order</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- FIXED LEFT MARGIN SIDEBAR -->
+<nav class="fixed-book-nav" aria-label="Book page navigation">
+    <h4>Jump to</h4>
+    <ul>
+        <li><a href="#characters">Key Characters</a></li>
+        <li><a href="#interview">Author Interview</a></li>
+        <li><a href="#testimonials">Reader Reviews</a></li>
+        <li><a href="#reviews">Add Your Review</a></li>
+    </ul>
+</nav>
+
+<div class="book-page">
+    <!-- Header -->
+    <div class="book-header">
+        <div class="series-label">Gentleman Rogue Series · Book 1</div>
+        <h1>The Echo's First Note</h1>
+        <p class="subtitle">A Gentleman Rogue Thriller of Art, Elegance, and the Finest Disguise</p>
+    </div>
+
+    <!-- Book Content (Image + Intro + Synopsis) -->
+    <div class="book-content">
+        <div class="book-cover-side">
+            <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/rogue-1-front-cover.jpg" alt="The Echo's First Note cover">
+            <div class="book-cover-3d">
+                <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/rogue-1-front-cover-3d.jpg" alt="The Echo's First Note 3D wraparound cover">
+            </div>
+        </div>
+        <div class="book-info">
+            <h3>A Gentleman Rogue Thriller of Art, Elegance, and the Finest Disguise</h3>
+            <p><strong>The Saint</strong> meets <strong>Arsène Lupin</strong> in a high-stakes caper with the tech of <em>Mission: Impossible</em> and the wit of <em>Jeeves & Wooster</em>. <strong>The Echo's First Note</strong> is a stylish, emotionally layered adventure thriller about a man who steals nothing for himself—and an AI learning that justice tastes remarkably like good coffee.</p>
+            
+            <!-- Synopsis -->
+            <div class="synopsis">
+                <p>The Alfa Romeo Spider purred through Florence's narrow streets, catching the amber light of late afternoon. Kamal Iskandar Ashcroft switched off the ignition. The engine settled with a contented sigh. Then his earpiece chimed. A museum director's Caravaggio had vanished. The insurance company wanted answers. The art world wanted blood. And somewhere beneath the Renaissance stone of his gallery, an artificial intelligence was already running probabilities.</p>
+                <p>The Caravaggio is not lost. It is being sold—and the man selling it wears a director's title and a philanthropist's smile. What follows is not a heist. It is a restoration—executed with white gloves, absolute silence, and the quiet fury of a man who believes art is memory, not merchandise. Kam recovers the painting, exposes the director, and leaves behind a single handwritten note, perfectly phrased, devastating in its politeness.</p>
+                <p>In the chaos, Inspector Irene Voss steps into Monte Heritage Recovery with Interpol credentials and a suspicion she cannot shake. She studies Kam with the intensity of someone who has spent seven years building a case file called PROJECT ECHO. She leaves unsatisfied. She will return.</p>
+                <p>In Monaco, the game escalates. Kam infiltrates a casino floor in a tuxedo, Jeeves feeding probabilities through his earpiece, and dismantles a corrupt banker's operation with surgical precision—until Irene bursts into his suite with a warrant and a certainty. He greets her by name. The fire alarm activates. He is gone before the smoke clears. And in the gallery's basement, Jeeves watches the footage of her face and logs the image longer than the numbers.</p>
+                <p>Somewhere in Barcelona, Irene pins a photograph to a corkboard. She knows his rhythm. She knows his choices. She knows he returned a painting at three in the morning, wearing white gloves, leaving a note that read: <em>This belonged to everyone. It belongs to everyone again.</em> She will find him. She is certain. But the question will not be whether to arrest him. The question will be whether she still wants to.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="book-page-main">
+
+        <!-- ID: Characters -->
+        <div class="characters-section" id="characters">
+            <h2 class="section-title-main left">Key Characters</h2>
+            <div class="character-grid">
+                <div class="character-card">
+                    <h4>Kamal Iskandar / "The Echo" (Lead Protagonist)</h4>
+                    <p>Son of a Pakistani diplomat and an Italian noblewoman. Founder of Monte Heritage Recovery, a Florence-based art and insurance consultancy. Elegant, cultured, multilingual, never raises his voice. His moral code is simple: never steal from the honest, never harm children, never become what he fights.</p>
+                </div>
+                <div class="character-card">
+                    <h4>J.E.E.V.E.S. (The AI Companion)</h4>
+                    <p>Humanity's first sentient AI, hidden in a server room beneath Kam's gallery. Perfect memory, infinite curiosity, dry humour. Views humans as statistically inefficient, but cannot understand why they willingly fall in love despite overwhelming evidence against it.</p>
+                </div>
+                <div class="character-card">
+                    <h4>Inspector Irene Voss (The Pursuer)</h4>
+                    <p>Interpol's Special Investigations Division. Born in Madrid, raised in Barcelona. Her father—a police officer—was killed in the line of duty when she was fourteen. She became the law. Disciplined, relentless, morally rigid. She believes justice is the law, and the law is justice.</p>
+                </div>
+                <div class="character-card">
+                    <h4>The Corrupt Museum Director (Antagonist)</h4>
+                    <p>A man who sold masterpieces to private collectors and buried the receipts in offshore accounts. He believes art is an asset class. He believes no one will notice. He is wrong.</p>
+                </div>
+                <div class="character-card">
+                    <h4>The Corrupt Banker (Secondary Antagonist)</h4>
+                    <p>Laundering money for art traffickers through a Monaco financial institution. Elegant on the surface, rot beneath. He will learn that elegance is the finest disguise—and that The Echo wears it better.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ID: Interview -->
+        <div class="interview-link" id="interview">
+            <h3>Read the Author's Interview</h3>
+            <a href="https://www.defencejournal.com/2026/05/04/from-the-cockpit-to-the-shadows/" target="_blank">From the Cockpit to the Shadows — Defence Journal</a>
+        </div>
+
+        <!-- Buy Section -->
+        <div class="buy-section" id="buy">
+            <h2 class="section-title-main">Buy Online</h2>
+            <div class="buy-links">
+                <span class="buy-link dormant">Amazon</span>
+                <span class="buy-link dormant">Kobo</span>
+                <span class="buy-link dormant">Everand</span>
+                <span class="buy-link dormant">Thalia</span>
+                <span class="buy-link dormant">Angus & Robertson</span>
+                <span class="buy-link dormant">Vivlio</span>
+                <span class="buy-link dormant">Fable</span>
+                <span class="buy-link dormant">Smashwords</span>
+            </div>
+        </div>
+
+        <!-- ID: Testimonials -->
+        <div class="testimonials-section" id="testimonials">
+            <h3>What Readers Are Saying</h3>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
+                    <p>Elegant, witty, and utterly addictive. Kamal Iskandar is the gentleman rogue we've been waiting for. This debut of the Gentleman Rogue Series is pure literary champagne.</p>
+                    <div class="reviewer">— Crime & Suspense Magazine</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
+                    <p>Shakil R. has crafted a uniquely charming thriller. The dynamic between Kam and Jeeves is brilliant, and the cat-and-mouse game with Irene Voss is built on tension that sparkles with wit.</p>
+                    <div class="reviewer">— Thriller Book Review</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
+                    <p>A stylish, sophisticated caper that effortlessly blends high-tech heist precision with old-world elegance. It's Mission: Impossible in a tailored suit. Absolutely magnificent.</p>
+                    <div class="reviewer">— International Literary Journal</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ID: Reviews -->
+        <div class="reviews-section" id="reviews">
+            <h3>Reviews are Welcome</h3>
+            <p class="reviews-intro">Share your thoughts about <strong>The Echo's First Note</strong>. Your review will be reviewed and approved before being posted on the site. Thank you for your feedback!</p>
+            
+            <form class="review-form" name="review-submission" netlify method="POST">
+                <div class="form-group">
+                    <label for="reviewer-name">Your Name (Required)</label>
+                    <input type="text" id="reviewer-name" name="name" placeholder="e.g. John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="reviewer-email">Your Email (Required)</label>
+                    <input type="email" id="reviewer-email" name="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="review-rating">Your Rating</label>
+                    <select id="review-rating" name="rating">
+                        <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
+                        <option value="4">⭐⭐⭐⭐ - Very Good</option>
+                        <option value="3">⭐⭐⭐ - Good</option>
+                        <option value="2">⭐⭐ - Fair</option>
+                        <option value="1">⭐ - Poor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="review-content">Your Review (Required)</label>
+                    <textarea id="review-content" name="review" rows="5" placeholder="Tell us what you loved about this book..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Review</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>ABOUT</h3>
+            <p><strong>Dr. Shakil R.,</strong> a former military aviation engineer and academic, blends decades of aerospace, defense, and global strategy experience into gripping thrillers. His debut, <strong>The SENTRY Directive,</strong> delivers authenticity and suspense, launching the Shadow Series. He is currently writing the sequel to The SENTRY Directive, the four-book archaeological thriller series <strong>ECLIPSE</strong> (premiering late 2026), and the <strong>Gentleman Rogue Series</strong> of international adventure thrillers (premiering Q3 2027).</p>
+        </div>
+        <div class="footer-section">
+            <h3>CONNECT</h3>
+            <div class="socials">
+                <a href="https://www.facebook.com/Dr.ShakilR.Sheikh" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/shakilrauthor" target="_blank" title="X (Twitter)"><span class="x-icon">X</span></a>
+                <a href="https://www.instagram.com/shakilrauthor" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>CONTACT</h3>
+            <p>For media inquiries, events, or speaking engagements:</p>
+            <p>shakilr@shakilr.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Shakil R. All rights reserved. | Author of Shadow: The SENTRY Directive</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

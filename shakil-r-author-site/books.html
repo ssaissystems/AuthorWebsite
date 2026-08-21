@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Dr. Shakil R. is the author of the Shadow, Eclipse, and Gentleman Rogue thriller series. A former military aviation engineer crafting authentic geopolitical and archaeological suspense.">
+
+    <!-- Social Media Open Graph Tags -->
+    <meta property="og:title" content="Shakil R. — Author of Geopolitical Thrillers">
+    <meta property="og:description" content="Former military aviation engineer and strategist, now writing thrillers where authenticity meets suspense.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/myphoto.jpg">
+    <meta property="og:url" content="https://shakilr.com/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiction by Shakil R. — Books</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .books-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .books-page > h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            text-align: center;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .books-page > .page-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .series-section {
+            margin-bottom: 4rem;
+        }
+
+        .series-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .series-header h2 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+
+        .series-header .series-badge {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 20px;
+            border: 1px solid;
+        }
+
+        .series-shadow .series-header h2 { color: var(--accent); }
+        .series-shadow .series-badge { color: var(--accent); border-color: rgba(0, 116, 255, 0.3); }
+        .series-eclipse .series-header h2 { color: var(--eclipse); }
+        .series-eclipse .series-badge { color: var(--eclipse); border-color: rgba(205, 127, 50, 0.3); }
+        .series-rogue .series-header h2 { color: var(--rogue); }
+        .series-rogue .series-badge { color: var(--rogue); border-color: rgba(212, 175, 55, 0.3); }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+
+        .book-card {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .book-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .book-cover-placeholder {
+            aspect-ratio: 2 / 3;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-light);
+            transition: box-shadow 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .book-card:hover .book-cover-placeholder {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .book-cover-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .book-cover-placeholder .placeholder-content {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .book-cover-placeholder .placeholder-content i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+
+        .book-cover-placeholder .placeholder-content .ph-title {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .book-cover-placeholder .placeholder-content .ph-subtitle {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.25);
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Series-specific cover backgrounds */
+        .series-shadow .book-cover-placeholder {
+            background: linear-gradient(145deg, #0b1a3a, #050d1f);
+            border-color: rgba(0, 116, 255, 0.15);
+        }
+        .series-shadow .book-cover-placeholder .placeholder-content i { color: var(--accent); }
+
+        .series-eclipse .book-cover-placeholder {
+            background: linear-gradient(145deg, #2a1f0e, #140f07);
+            border-color: rgba(205, 127, 50, 0.15);
+        }
+        .series-eclipse .book-cover-placeholder .placeholder-content i { color: var(--eclipse); }
+
+        .series-rogue .book-cover-placeholder {
+            background: linear-gradient(145deg, #2a1f0a, #140f05);
+            border-color: rgba(212, 175, 55, 0.15);
+        }
+        .series-rogue .book-cover-placeholder .placeholder-content i { color: var(--rogue); }
+
+        .book-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .book-card .book-status {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .book-card .book-status.available { color: #4CAF50; }
+        .book-card .book-status.coming { color: var(--text-dim); }
+
+        /* -------------------------------------------------- */
+        /* FIXED LEFT SIDEBAR NAV (Embedded for safety)       */
+        /* -------------------------------------------------- */
+        .fixed-book-nav {
+            position: fixed;
+            top: 120px;
+            left: 20px;
+            width: 220px;
+            background: var(--medium-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            z-index: 99;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .fixed-book-nav h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 0.8rem;
+        }
+
+        .fixed-book-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .fixed-book-nav ul li {
+            margin-bottom: 12px;
+        }
+
+        .fixed-book-nav ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        .fixed-book-nav ul li a:hover,
+        .fixed-book-nav ul li a.active {
+            color: var(--accent);
+            transform: translateX(6px);
+        }
+
+        @media (max-width: 1024px) {
+            .fixed-book-nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .books-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body id="top">
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-brand">SHAKIL <span>R.</span></a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="author.html">Author</a></li>
+            <li><a href="books.html" class="active">Books</a></li>
+            <li><a href="circle.html">The Circle</a></li>
+            <li><a href="preorder.html">Pre-Order</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- FIXED LEFT MARGIN SIDEBAR -->
+<nav class="fixed-book-nav" aria-label="Page navigation">
+    <h4>Jump to</h4>
+    <ul>
+        <li><a href="#shadow">Shadow Series</a></li>
+        <li><a href="#eclipse">Eclipse Series</a></li>
+        <li><a href="#rogue">Gentleman Rogue</a></li>
+        <li style="border-top: 1px solid var(--border-light); padding-top: 12px; margin-top: 12px;">
+            <a href="#top" style="color: var(--accent);"><i class="fas fa-arrow-up" style="margin-right: 6px;"></i> Back to Top</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="books-page">
+    <h1>Fiction by Shakil R.</h1>
+    <p class="page-subtitle">Three thriller series spanning geopolitics, archaeology, and international adventure</p>
+
+    <!-- SHADOW SERIES -->
+    <div class="series-section series-shadow" id="shadow">
+        <div class="series-header">
+            <h2>The Shadow Series</h2>
+            <span class="series-badge">Geopolitical Thrillers</span>
+        </div>
+        <div class="books-grid">
+            <div class="book-card">
+                <a href="sentry-directive.html">
+                    <div class="book-cover-placeholder">
+                        <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/sentry-directive-cover.jpg" alt="The SENTRY Directive cover">
+                    </div>
+                    <h3>The SENTRY Directive</h3>
+                    <div class="book-status available">Available Now</div>
+                </a>
+            </div>
+            <div class="book-card">
+                <!-- <a href="the-price-of-defiance.html"> -->
+                <div style="display: block; text-decoration: none; color: inherit;">
+                    <div class="book-cover-placeholder">
+                        <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/shadow-2-front-cover.jpg" alt="Shadow Book 2 cover">
+                    </div>
+                    <h3>Shadow Book 2</h3>
+                    <div class="book-status coming">Coming Soon</div>
+                </div>
+                <!-- </a> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ECLIPSE SERIES -->
+    <div class="series-section series-eclipse" id="eclipse">
+        <div class="series-header">
+            <h2>The Eclipse Series</h2>
+            <span class="series-badge">Archaeological Thrillers · Premiering Late 2026</span>
+        </div>
+        <div class="books-grid">
+            <!-- Eclipse Book 1 (The Jade Compass) -->
+            <div class="book-card">
+                <!-- <a href="the-jade-compass.html"> -->
+                <div style="display: block; text-decoration: none; color: inherit;">
+                    <div class="book-cover-placeholder">
+                        <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/eclipse-1-front-cover.jpg" alt="The Jade Compass cover">
+                    </div>
+                    <h3>The Jade Compass</h3>
+                    <div class="book-status coming">Coming Late 2026</div>
+                </div>
+                <!-- </a> -->
+            </div>
+            
+            <!-- Eclipse Book 2 (The Shepherd & The Jaguar) -->
+            <div class="book-card">
+                <!-- <a href="the-shepherd-and-the-jaguar.html"> -->
+                <div style="display: block; text-decoration: none; color: inherit;">
+                    <div class="book-cover-placeholder">
+                        <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/eclipse-2-front-cover.jpg" alt="The Shepherd & The Jaguar cover">
+                    </div>
+                    <h3>The Shepherd & The Jaguar</h3>
+                    <div class="book-status coming">Coming Late 2026</div>
+                </div>
+                <!-- </a> -->
+            </div>
+
+            <!-- Eclipse Book 3 (The Desert & The Nile) -->
+            <div class="book-card">
+                <!-- <a href="the-desert-and-the-nile.html"> -->
+                <div style="display: block; text-decoration: none; color: inherit;">
+                    <div class="book-cover-placeholder">
+                        <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/eclipse-3-front-cover.jpg" alt="The Desert & The Nile cover">
+                    </div>
+                    <h3>The Desert & The Nile</h3>
+                    <div class="book-status coming">Coming 2027</div>
+                </div>
+                <!-- </a> -->
+            </div>
+
+            <!-- Eclipse Book 4 (Placeholder until image is uploaded) -->
+            <div class="book-card">
+                <!-- <a href="sentry-directive.html"> -->
+                <div style="display: block; text-decoration: none; color: inherit;">
+                    <div class="book-cover-placeholder">
+                        <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/eclipse-4-front-cover.jpg" alt="Eclipse Book 4 cover">
+                    </div>
+                    <h3>Eclipse Book 4</h3>
+                    <div class="book-status coming">Coming 2027</div>
+                </div>
+                <!-- </a> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- GENTLEMAN ROGUE SERIES -->
+    <div class="series-section series-rogue" id="rogue">
+        <div class="series-header">
+            <h2>The Gentleman Rogue Series</h2>
+            <span class="series-badge">International Adventure · Premiering Q3 2027</span>
+        </div>
+        <div class="books-grid">
+            <div class="book-card">
+                <!-- <a href="the-echos-first-note.html"> -->
+                <div style="display: block; text-decoration: none; color: inherit;">
+                    <div class="book-cover-placeholder">
+                        <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/rogue-1-front-cover.jpg" alt="The Echo's First Note cover">
+                    </div>
+                    <h3>The Echo's First Note</h3>
+                    <div class="book-status coming">Coming Q3 2027</div>
+                </div>
+                <!-- </a> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>ABOUT</h3>
+            <p><strong>Dr. Shakil R.,</strong> a former military aviation engineer and academic, blends decades of aerospace, defense, and global strategy experience into gripping thrillers. His debut, <strong>SHADOW: The SENTRY Directive,</strong> delivers authenticity and suspense, launching the Shadow Series. He is currently writing the sequel to The SENTRY Directive, the four-book archaeological thriller series <strong>ECLIPSE</strong> (premiering late 2026), and the <strong>Gentleman Rogue Series</strong> of international adventure thrillers (premiering Q3 2027).</p>
+        </div>
+        <div class="footer-section">
+            <h3>CONNECT</h3>
+            <div class="socials">
+                <a href="https://www.facebook.com/Dr.ShakilR.Sheikh" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/shakilrauthor" target="_blank" title="X (Twitter)"><span class="x-icon">X</span></a>
+                <a href="https://www.instagram.com/shakilrauthor" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>CONTACT</h3>
+            <p>For media inquiries, events, or speaking engagements:</p>
+            <p>shakilr@shakilr.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Shakil R. | Author of Shadow: The SENTRY Directive</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

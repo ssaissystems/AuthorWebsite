@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Dr. Shakil R. is the author of the Shadow, Eclipse, and Gentleman Rogue thriller series. A former military aviation engineer crafting authentic geopolitical and archaeological suspense.">
+
+    <!-- Social Media Open Graph Tags -->
+    <meta property="og:title" content="Shakil R. — Author of Geopolitical Thrillers">
+    <meta property="og:description" content="Former military aviation engineer and strategist, now writing thrillers where authenticity meets suspense.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/myphoto.jpg">
+    <meta property="og:url" content="https://shakilr.com/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles & Publications — Shakil R.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .articles-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .articles-page > h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            text-align: center;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 3rem;
+        }
+
+        /* Sub-section Headings */
+        .section-heading {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--text);
+            text-align: left;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        /* Articles Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .article-card {
+            background: var(--medium-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 116, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .article-card a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .article-thumb {
+            background: linear-gradient(135deg, #0a0a1a, #050d1f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-thumb.card-horizontal {
+            aspect-ratio: 5 / 1;
+        }
+
+        .article-thumb.card-vertical {
+            aspect-ratio: 1 / 1.33;
+        }
+
+        .article-thumb .thumb-type {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 12px;
+            background: rgba(0, 116, 255, 0.15);
+            color: var(--accent);
+            border: 1px solid rgba(0, 116, 255, 0.2);
+            z-index: 2;
+        }
+
+        .article-thumb .thumb-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .article-body {
+            padding: 1.2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-body h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .article-body .article-meta {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+        }
+
+        .article-body .article-source {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            flex: 1;
+        }
+
+        .article-body .article-link {
+            margin-top: 12px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.85rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .article-body .article-link i {
+            font-size: 0.7rem;
+        }
+
+        /* -------------------------------------------------- */
+        /* FIXED LEFT SIDEBAR NAV (Embedded for safety)       */
+        /* -------------------------------------------------- */
+        .fixed-book-nav {
+            position: fixed;
+            top: 120px;
+            left: 20px;
+            width: 220px;
+            background: var(--medium-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            z-index: 99;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .fixed-book-nav h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 0.8rem;
+        }
+
+        .fixed-book-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .fixed-book-nav ul li {
+            margin-bottom: 12px;
+        }
+
+        .fixed-book-nav ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        .fixed-book-nav ul li a:hover,
+        .fixed-book-nav ul li a.active {
+            color: var(--accent);
+            transform: translateX(6px);
+        }
+
+        @media (max-width: 1024px) {
+            .fixed-book-nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body id="top">
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-brand">SHAKIL <span>R.</span></a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="author.html">Author</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="circle.html">The Circle</a></li>
+            <li><a href="preorder.html">Pre-Order</a></li>
+            <li><a href="articles.html" class="active">Articles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- FIXED LEFT MARGIN SIDEBAR -->
+<nav class="fixed-book-nav" aria-label="Page navigation">
+    <h4>Jump to</h4>
+    <ul>
+        <li><a href="#energy-security">Energy Security</a></li>
+        <li><a href="#defence-geopolitics">Defence & Geopolitics</a></li>
+        <li><a href="#climate-crisis">Mitigating Climate Crisis</a></li>
+        <li><a href="#medical-apps">Medical Applications</a></li>
+        <li><a href="#aerodynamics">Aerodynamics</a></li>
+        <li><a href="#general">General</a></li>
+        <li style="border-top: 1px solid var(--border-light); padding-top: 12px; margin-top: 12px;">
+            <a href="#top" style="color: var(--accent);"><i class="fas fa-arrow-up" style="margin-right: 6px;"></i> Back to Top</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="articles-page">
+    <h1>PUBLISHED ARTICLES</h1>
+
+    <!-- ============================================ -->
+    <!-- SECTION 1: ENERGY SECURITY                   -->
+    <!-- ============================================ -->
+    <div class="section-heading" id="energy-security">Energy Security</div>
+    <div class="articles-grid">
+        <div class="article-card">
+            <a href="https://www.defencejournal.com/2026/07/01/transport-electrification/" target="_blank">
+                <div class="article-thumb card-horizontal">
+                    <span class="thumb-type">Opinion</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/DJ.jpg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Transport Electrification</h3>
+                    <div class="article-meta">July 2026 · Defence Journal</div>
+                    <p class="article-source">Making the Transition Practical</p>
+                    <span class="article-link">Read Article <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://www.defencejournal.com/2026/06/01/the-innkeepers-trap/" target="_blank">
+                <div class="article-thumb card-horizontal">
+                    <span class="thumb-type">Opinion</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/DJ.jpg " alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Diagnosis of Pakistan’s Energy Paradox</h3>
+                    <div class="article-meta">June 2026 · Defence Journal</div>
+                    <p class="article-source">The Innkeeper’s Trap</p>
+                    <span class="article-link">Read Article <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://www.defencejournal.com/2026/06/01/grid-modernisation-wiring-the-inn/" target="_blank">
+                <div class="article-thumb card-horizontal">
+                    <span class="thumb-type">Opinion</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/DJ.jpg " alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Grid Modernization</h3>
+                    <div class="article-meta">June 2026 · Defence Journal</div>
+                    <p class="article-source">Wiring the Inn</p>
+                    <span class="article-link">Read Article <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://www.defencejournal.com/2026/05/04/energy-security-as-national-security/" target="_blank">
+                <div class="article-thumb card-horizontal">
+                    <span class="thumb-type">Opinion</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/DJ.jpg " alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Energy Security as National Security</h3>
+                    <div class="article-meta">May 2026 · Defence Journal</div>
+                    <p class="article-source">A Strategic Pathway for Pakistan’s Economic and Defence Transformation</p>
+                    <span class="article-link">Read Article <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SECTION 2: DEFENCE AND GEOPOLITICS           -->
+    <!-- ============================================ -->
+    <div class="section-heading" id="defence-geopolitics">Defence and Geopolitics</div>
+    <div class="articles-grid">
+        <div class="article-card">
+            <a href="https://www.defencejournal.com/2026/07/01/the-fluid-chessboard/" target="_blank">
+                <div class="article-thumb card-horizontal">
+                    <span class="thumb-type">Opinion</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/DJ.jpg " alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>The Fluid Chessboard</h3>
+                    <div class="article-meta">July 2026 · Defence Journal</div>
+                    <p class="article-source">Awareness and Endurance in the Maritime Domain</p>
+                    <span class="article-link">Read Article <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://www.defencejournal.com/2026/02/10/the-self-aware-battlefield/" target="_blank">
+                <div class="article-thumb card-horizontal">
+                    <span class="thumb-type">Opinion</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/DJ.jpg " alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>The Self-Aware Battlefield</h3>
+                    <div class="article-meta">Feb 2026 · Defence Journal</div>
+                    <p class="article-source">Where Steel Thinks, and Survival Speaks</p>
+                    <span class="article-link">Read Article <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://www.defencejournal.com/2025/11/10/pakistan-india-conflict-may-2025/" target="_blank">
+                <div class="article-thumb card-horizontal">
+                    <span class="thumb-type">Opinion</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/DJ.jpg " alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Pakistan-India Conflict May 2025</h3>
+                    <div class="article-meta">Nov 2025 · Defence Journal</div>
+                    <p class="article-source">Largest Air Battle of The 21st Century</p>
+                    <span class="article-link">Read Article <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://www.defencejournal.com/2026/08/03/mirage-reimagined/" target="_blank">
+                <div class="article-thumb card-horizontal">
+                    <span class="thumb-type">Opinion</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/DJ.jpg " alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Mirage Reimagined</h3>
+                    <div class="article-meta">Aug 2026 · Defence Journal</div>
+                    <p class="article-source">Path for Pakistan’s Delta Legacy</p>
+                    <span class="article-link">Read Article <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://www.defencejournal.com/2026/03/05/the-porcupine-stings-back/" target="_blank">
+                <div class="article-thumb card-horizontal">
+                    <span class="thumb-type">Opinion</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/DJ.jpg " alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>The Porcupine Stings Back</h3>
+                    <div class="article-meta">Mar 2026 · Defence Journal</div>
+                    <p class="article-source">A Fictitious Scenario on how Venezuela could have countered the U.S. Raid</p>
+                    <span class="article-link">Read Article <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://www.defencejournal.com/2026/05/04/the-islamabad-table-beyond-the-ceasefire/" target="_blank">
+                <div class="article-thumb card-horizontal">
+                    <span class="thumb-type">Opinion</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/DJ.jpg " alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>The Islamabad Table: Beyond the Ceasefire</h3>
+                    <div class="article-meta">May 2026 · Defence Journal</div>
+                    <p class="article-source">From a Fragile Truce to Regional and Equitable Reckoning</p>
+                    <span class="article-link">Read Article <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SECTION 3: MITIGATING THE CLIMATE CRISIS     -->
+    <!-- ============================================ -->
+    <div class="section-heading" id="climate-crisis">Mitigating the Climate Crisis</div>
+    <div class="articles-grid">
+        <div class="article-card">
+            <a href="https://doi.org/10.1109/ACCESS.2023.3279489" target="_blank">
+                <div class="article-thumb card-horizontal">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/IEEE.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Improvement of Non-Intrusive Load Monitoring Using Voting-Based Consensus Clustering</h3>
+                    <div class="article-meta">2023 · IEEE Access</div>
+                    <p class="article-source">M. Ghaffar, S. R. Sheikh, N. Naseer, S. A. Usama, B. Salah, S. A. K. Alkhatib</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://doi.org/10.1016/j.est.2022.106298" target="_blank">
+                <div class="article-thumb card-vertical">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/JES.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>A novel convolutional informer network for deterministic and probabilistic state-of-charge estimation of lithium-ion batteries</h3>
+                    <div class="article-meta">2023 · Journal of Energy Storage</div>
+                    <p class="article-source">R. Zou, Y. Duan, Y. Wang, J. Pang, F. Liu, S. R. Sheikh</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://doi.org/10.3390/en15176356" target="_blank">
+                <div class="article-thumb card-vertical">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/energies.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Experimental Thermal Response Study of Multilayered, Encapsulated, PCM-Integrated Building Construction Materials</h3>
+                    <div class="article-meta">2022 · Energies</div>
+                    <p class="article-source">A. U. Rehman, S. R. Sheikh, Z. Kausar, M. Grimes, S. J. McCormack</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://doi.org/10.3390/s22114036" target="_blank">
+                <div class="article-thumb card-vertical">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/sensors.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Non‐Intrusive Load Monitoring of Building Using Spectral Clustering</h3>
+                    <div class="article-meta">2022 · Sensors</div>
+                    <p class="article-source">M. Ghaffar, S. R. Sheikh, N. Naseer, Z. Mohy Ud Din, H. Z. U. Rehman, M. Naved</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://doi.org/10.3390/en14134032" target="_blank">
+                <div class="article-thumb card-vertical">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/energies.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Numerical Simulation of a Novel Dual Layered Phase Change Material Brick Wall for Human Comfort in Hot and Cold Climatic Conditions</h3>
+                    <div class="article-meta">2021 · Energies</div>
+                    <p class="article-source">A. U. Rehman, S. R. Sheikh, Z. Kausar, S. J. McCormack</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://doi.org/10.3390/en14123544" target="_blank">
+                <div class="article-thumb card-vertical">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/energies.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>A Study of Hot Climate Low-Cost Low-Energy Eco-Friendly Building Envelope with Embedded Phase Change Material</h3>
+                    <div class="article-meta">2021 · Energies</div>
+                    <p class="article-source">A. U. Rehman, N. Ghafoor, S. R. Sheikh, Z. Kausar, F. Rauf, F. Sher, M. F. Shah, H. Yaqoob</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://doi.org/10.3390/en14113160" target="_blank">
+                <div class="article-thumb card-vertical">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/energies.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>A Low-Cost Sustainable Energy Solution for Pristine Mountain Areas of Developing Countries</h3>
+                    <div class="article-meta">2021 · Energies</div>
+                    <p class="article-source">S. R. Sheikh, S. H. R. Shah, U. Rauf, F. Rauf, Z. Kausar, U. Aziz, M. F. Shah, H. Yaqoob, M. B. K. Niazi</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="http://doi.org/10.4038/jnsfsr.v49i2.9349" target="_blank">
+                <div class="article-thumb card-vertical">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/SLJOL.jpg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Characteristic photon yields from thermal neutron activation of explosives for a portable detection system</h3>
+                    <div class="article-meta">2021 · J. Natn. Sci. Foundation Sri Lanka</div>
+                    <p class="article-source">H. Khan, Z. U. Koreshi, S. R. Sheikh, M. Y. Khan</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://tj.uettaxila.edu.pk/index.php/technical-journal/article/view/1313" target="_blank">
+                <div class="article-thumb card-horizontal">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/UET-Tx.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>A Novel Blade-Pitching Mechanism Design and Testing for Micro Vertical-Axis Water Turbines</h3>
+                    <div class="article-meta">2020 · Technical Journal</div>
+                    <p class="article-source">S. R. Sheikh, Z. U. Koreshi, U. Rauf, S. Khalil, U. Aziz</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="http://researcherslinks.com/current-issues/MITIGATING-CO2-EMISSIONS/31/5/3275" target="_blank">
+                <div class="article-thumb card-vertical">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/JEAS.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Mitigating CO2 Emissions of Academic Buildings in Pakistan Using Energy Conservation Techniques</h3>
+                    <div class="article-meta">2019 · Journal of Engineering and Applied Sciences</div>
+                    <p class="article-source">S. R. Sheikh, Z. U. Koreshi, N. Ghafoor, M. S. Khalil, M. Ghaffar</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://doi.org/10.1080/14480220.2019.1639288" target="_blank">
+                <div class="article-thumb card-vertical">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/training.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Emerging smart community concept and microgrid technology - a study of lagging skill development in Pakistan</h3>
+                    <div class="article-meta">2019 · International Journal of Training Research</div>
+                    <p class="article-source">S. R. Sheikh, H. Sheikh, Z. U. Koreshi</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://doi.org/10.2514/6.2023-2174" target="_blank">
+                <div class="article-thumb card-horizontal">
+                    <span class="thumb-type">Conference</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/AIAA.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Behavior Analysis of Vertical Axis Water Turbine with Individual Blade Pitch Control</h3>
+                    <div class="article-meta">2023 · AIAA · Green Engineering I</div>
+                    <p class="article-source">F. Khan, S. R. Sheikh, J. Masud</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://doi.org/10.1109/ICRAI47710.2019.8967381" target="_blank">
+                <div class="article-thumb card-horizontal">
+                    <span class="thumb-type">Conference</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/IEEE.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Electrical energy management of building using fuzzy control</h3>
+                    <div class="article-meta">2019 · ICRAI</div>
+                    <p class="article-source">M. Ghaffar, N. Naseer, S. R. Sheikh, M. Naved, U. Aziz, Z. U. Koreshi</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SECTION 4: MEDICAL APPLICATIONS              -->
+    <!-- ============================================ -->
+    <div class="section-heading" id="medical-apps">Medical Applications</div>
+    <div class="articles-grid">
+        <div class="article-card">
+            <a href="https://doi.org/10.1016/j.bspc.2021.102627" target="_blank">
+                <div class="article-thumb card-vertical">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/biomedical.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Patient's intention detection and control for sit-stand mechanism of an assistive device for paraplegics</h3>
+                    <div class="article-meta">2021 · Biomedical Signal Processing and Control</div>
+                    <p class="article-source">A. Abdullah, Z. Kausar, A. Hameed, S. R. Sheikh, H. Khan</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="http://dx.doi.org/10.4038/jnsfsr.v49i4.9476" target="_blank">
+                <div class="article-thumb card-vertical">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/SLJOL.jpg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Energy deposition and dose enhancement using Monte Carlo derivative sampling: applications in brachytherapy</h3>
+                    <div class="article-meta">2021 · J. Natn. Sci. Foundation Sri Lanka</div>
+                    <p class="article-source">H. Khan, Z. U. Koreshi, U. Aziz, S. R. Sheikh, S. A. Ahmad</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://doi.org/10.1109/AIMS52415.2021.9466031" target="_blank">
+                <div class="article-thumb card-horizontal">
+                    <span class="thumb-type">Conference</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/IEEE.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Smart Home Environment using Head Gestures and EEG Eye Blink Control Schemes</h3>
+                    <div class="article-meta">2021 · IEEE AIMS, Bandung, Indonesia</div>
+                    <p class="article-source">M. Ghaffar, S. R. Sheikh, N. Naseer, F. Ahmed</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://doi.org/10.1109/AIMS52415.2021.9466031" target="_blank">
+                <div class="article-thumb card-horizontal">
+                    <span class="thumb-type">Conference</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/IEEE.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Assistive Smart Home Environment using Head Gestures and EEG Eye Blink Control Schemes</h3>
+                    <div class="article-meta">2021 · IEEE AIMS, Bandung, Indonesia</div>
+                    <p class="article-source">M. Ghaffar, S. R. Sheikh, N. Naseer, F. Ahmed</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SECTION 5: AERODYNAMICS                      -->
+    <!-- ============================================ -->
+    <div class="section-heading" id="aerodynamics">Aerodynamics</div>
+    <div class="articles-grid">
+        <div class="article-card">
+            <a href="https://doi.org/10.2514/1.22775" target="_blank">
+                <div class="article-thumb card-horizontal">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/AIAA.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Robust Design of an Aerodynamic Compensation Pitot-Static Tube for Supersonic Aircraft</h3>
+                    <div class="article-meta">2007 · Journal of Aircraft</div>
+                    <p class="article-source">A. Latif, J. Masud, S. R. Sheikh, K. Parvez</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://doi.org/10.1016/S1270-9638(00)86426-3" target="_blank">
+                <div class="article-thumb card-vertical">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/AST.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Dynamic stall suppression on an oscillating airfoil by steady and unsteady tangential blowing</h3>
+                    <div class="article-meta">1999 · Aerospace Science and Technology</div>
+                    <p class="article-source">M. Sun, S. R. Sheikh</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://doi.org/10.24949/njes.v1i1.28" target="_blank">
+                <div class="article-thumb card-horizontal">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/NUST.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>2D Large Eddy Simulation of Turbulent Boundary Flow around a Controlled-Diffusion Wing Section Using a Locally Refined Unstructured Grid</h3>
+                    <div class="article-meta">2008 · NUST Journal of Engineering Sciences</div>
+                    <p class="article-source">O. A. Qazi, R. Prosser, S. R. Sheikh, J. Masud</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://doi.org/10.24949/njes.v1i1.74" target="_blank">
+                <div class="article-thumb card-horizontal">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/NUST.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Separation Control on Oscillating Airfoils Using Moving Surface Control</h3>
+                    <div class="article-meta">2008 · NUST Journal of Engineering Sciences</div>
+                    <p class="article-source">S. R. Sheikh, O. A. Qazi</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SECTION 6: GENERAL                           -->
+    <!-- ============================================ -->
+    <div class="section-heading" id="general">General</div>
+    <div class="articles-grid">
+        <div class="article-card">
+            <a href="https://doi.org/10.3390/pr9091547" target="_blank">
+                <div class="article-thumb card-vertical">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/processes.jpeg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Feedback Control of Melt Pool Area in Selective Laser Melting Additive Manufacturing Process</h3>
+                    <div class="article-meta">2021 · Processes</div>
+                    <p class="article-source">S. Z. Hussain, Z. Kausar, Z. U. Koreshi, S. R. Sheikh, H. Z. U. Rehman, H. Yaqoob, M. F. Shah, A. Abdullah, F. Sher</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="http://dx.doi.org/10.4038/jnsfsr.v52i1.11652" target="_blank">
+                <div class="article-thumb card-vertical">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/SLJOL.jpg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Optimal fissile distribution in multiplying systems: Illustrative examples with Monte Carlo simulation and Pontryagin’s maximum principle</h3>
+                    <div class="article-meta">2024 · J. Natn. Sci. Foundation Sri Lanka</div>
+                    <p class="article-source">H. Khan, U. Aziz, Z. U. Koreshi, S. R. Sheikh</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://doi.org/10.1016/j.heliyon.2024.e25343" target="_blank">
+                <div class="article-thumb card-vertical">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/Heliyon.jpg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>Non-uniform fuel distribution and thermo-mechanical analysis of a 1 MW thermal power micronuclear heat pipe reactor</h3>
+                    <div class="article-meta">2024 · Heliyon</div>
+                    <p class="article-source">U. Aziz, Z. U. Koreshi, H. Khan, S. R. Sheikh</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <div class="article-card">
+            <a href="https://doi.org/10.2298/NTRP2003208A" target="_blank">
+                <div class="article-thumb card-vertical">
+                    <span class="thumb-type">Journal</span>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/NSS.jpg" alt="Article thumbnail" class="thumb-image">
+                </div>
+                <div class="article-body">
+                    <h3>A Study of Criticality and Thermal Loading in a Conceptual Micronuclear Heat Pipe Reactor for Space Applications</h3>
+                    <div class="article-meta">2020 · Nuclear Technology and Radiation Protection</div>
+                    <p class="article-source">U. Aziz, Z. U. Koreshi, S. R. Sheikh, H. Khan</p>
+                    <span class="article-link">View Paper <i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>ABOUT</h3>
+            <p><strong>Dr. Shakil R.,</strong> a former military aviation engineer and academic, blends decades of aerospace, defense, and global strategy experience into gripping thrillers. His debut, <strong>SHADOW: The SENTRY Directive,</strong> delivers authenticity and suspense, launching the Shadow Series. He is currently writing the sequel to The SENTRY Directive, the four-book archaeological thriller series <strong>ECLIPSE</strong> (premiering late 2026), and the <strong>Gentleman Rogue Series</strong> of international adventure thrillers (premiering Q3 2027).</p>
+        </div>
+        <div class="footer-section">
+            <h3>CONNECT</h3>
+            <div class="socials">
+                <a href="https://www.facebook.com/Dr.ShakilR.Sheikh" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/shakilrauthor" target="_blank" title="X (Twitter)"><span class="x-icon">X</span></a>
+                <a href="https://www.instagram.com/shakilrauthor" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>CONTACT</h3>
+            <p>For media inquiries, events, or speaking engagements:</p>
+            <p>shakilr@shakilr.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Shakil R. All rights reserved. | Author of Shadow: The SENTRY Directive</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

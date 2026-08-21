@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Dr. Shakil R. is the author of the Shadow, Eclipse, and Gentleman Rogue thriller series. A former military aviation engineer crafting authentic geopolitical and archaeological suspense.">
+
+    <!-- Social Media Open Graph Tags -->
+    <meta property="og:title" content="Shakil R. — Author of Geopolitical Thrillers">
+    <meta property="og:description" content="Former military aviation engineer and strategist, now writing thrillers where authenticity meets suspense.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/myphoto.jpg">
+    <meta property="og:url" content="https://shakilr.com/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shakil R. — Author of Geopolitical & Archaeological Thrillers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* HOME PAGE SPECIFIC STYLES */
+
+        /* Radar Hero */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            min-height: 90vh;
+            background: linear-gradient(45deg, #0a0a1a, #000000);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle at center, rgba(0, 30, 60, 0.3) 0%, rgba(0, 0, 0, 0.9) 70%);
+            z-index: 1;
+        }
+
+        .scan-line {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 2px;
+            background: linear-gradient(to right, transparent, rgba(0, 116, 255, 0.7), transparent);
+            animation: scan 4s linear infinite;
+            z-index: 2;
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
+        }
+
+        /* Hero Content Layout */
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            padding: 2rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-content h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            color: var(--text);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+
+        .tagline-primary {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 400;
+            font-size: 1.8rem;
+            color: var(--accent);
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline-secondary {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700; 
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content .bio-teaser {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Featured Book Section */
+        .featured-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .featured-book {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .featured-cover {
+            flex: 0 0 300px;
+            text-align: center;
+        }
+
+        .featured-cover img {
+            max-width: 280px;
+            width: 100%;
+            border-radius: 6px;
+            box-shadow: 0 0 30px rgba(0, 116, 255, 0.3);
+        }
+
+        .featured-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .featured-info .series-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .featured-info h2 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .featured-info .hook {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .featured-info .btn-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Series Showcase */
+        .series-showcase {
+            padding: 5rem 2rem;
+            background: #080808;
+        }
+
+        .series-showcase-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .series-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .series-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            overflow: hidden;
+        }
+
+        .series-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 116, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .series-card img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 720 / 650;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.2rem;
+        }
+
+        .series-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .series-card .series-status {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .series-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .series-card .btn {
+            margin-top: auto;
+        }
+
+        /* Latest News */
+        .news-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .news-card {
+            background: var(--medium-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--border-light);
+            border-left: 4px solid var(--accent);
+            margin-top: 2rem;
+        }
+
+        .news-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .news-card .news-date {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-bottom: 12px;
+        }
+
+        .news-card p {
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* -------------------------------------------------- */
+        /* FIXED LEFT SIDEBAR NAV (Embedded in inline <style>) */
+        /* -------------------------------------------------- */
+        .fixed-book-nav {
+            position: fixed;
+            top: 220px;
+            left: 20px;
+            width: 220px;
+            background: var(--medium-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            z-index: 99;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .fixed-book-nav h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 0.8rem;
+        }
+
+        .fixed-book-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .fixed-book-nav ul li {
+            margin-bottom: 12px;
+        }
+
+        .fixed-book-nav ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        .fixed-book-nav ul li a:hover,
+        .fixed-book-nav ul li a.active {
+            color: var(--accent);
+            transform: translateX(6px);
+        }
+
+        @media (max-width: 1024px) {
+            .fixed-book-nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .featured-book { flex-direction: column; }
+            .series-grid { grid-template-columns: 1fr; }
+            .hero-cta { flex-direction: column; }
+        }
+    </style>
+</head>
+<body id="top">
+
+<!-- =============================================== -->
+<!-- START FREE PROMO BANNER (Date: Aug 27 & 28, 2026) -->
+<!-- =============================================== -->
+<div style="
+    background: linear-gradient(90deg, #E53935, #C62828);
+    color: #ffffff;
+    text-align: center;
+    padding: clamp(20px, 4vw, 40px) clamp(20px, 4vw, 40px);
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    letter-spacing: 2px;
+    border-bottom: 4px solid #FFD700;
+">
+    <span style="color: #FFD700; font-weight: 700;">FREE EBOOK:</span> 
+    Get <strong>The SENTRY Directive</strong> absolutely FREE! 
+    <span style="color: #FFD700; font-weight: 700;">August 27 & 28, 2026.</span>
+    <a href="https://www.amazon.com/dp/B0H54Z2XWS" target="_blank" style="
+        display: inline-block;
+        color: #000000;
+        background: #FFD700;
+        padding: 12px 30px;
+        border-radius: 40px;
+        margin-left: 15px;
+        margin-top: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    ">Grab Yours Now</a>
+</div>
+<!-- =============================================== -->
+<!-- END FREE PROMO BANNER                            -->
+<!-- =============================================== -->
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-brand">SHAKIL <span>R.</span></a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="author.html">Author</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="circle.html">The Circle</a></li>
+            <li><a href="preorder.html">Pre-Order</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- FIXED LEFT MARGIN SIDEBAR -->
+<nav class="fixed-book-nav" aria-label="Page navigation">
+    <h4>Jump to</h4>
+    <ul>
+        <li><a href="#featured">Featured Book</a></li>
+        <li><a href="#series">Three Series</a></li>
+        <li><a href="#news">Latest News</a></li>
+        <li style="border-top: 1px solid var(--border-light); padding-top: 12px; margin-top: 12px;">
+            <a href="#top" style="color: var(--accent);"><i class="fas fa-arrow-up" style="margin-right: 6px;"></i> Back to Top</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero-section">
+    <div class="scan-line"></div>
+
+    <!-- Auto-Scrolling Book Carousel with Dynamic Text Box Below (7 Books) -->
+    <div class="book-carousel" id="bookCarousel">
+        <div class="carousel-track" id="carouselTrack">
+            
+            <!-- Slide 1: SENTRY Directive (LIVE) -->
+            <div class="carousel-slide">
+                <a href="sentry-directive.html">
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/sentry-directive-cover.jpg" alt="The SENTRY Directive cover">
+                </a>
+            </div>
+            
+            <!-- Slide 2: Shadow Book 2 (HIDDEN) -->
+            <div class="carousel-slide">
+                <!-- <a href="the-price-of-defiance.html"> -->
+                <div>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/shadow-2-front-cover.jpg" alt="Shadow Book 2 cover">
+                </div>
+                <!-- </a> -->
+            </div>
+            
+            <!-- Slide 3: Eclipse Book 1 (HIDDEN) -->
+            <div class="carousel-slide">
+                <!-- <a href="the-jade-compass.html"> -->
+                <div>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/eclipse-1-front-cover.jpg" alt="Eclipse Book 1 cover">
+                </div>
+                <!-- </a> -->
+            </div>
+            
+            <!-- Slide 4: Eclipse Book 2 (HIDDEN) -->
+            <div class="carousel-slide">
+                <!-- <a href="the-shepherd-and-the-jaguar.html"> -->
+                <div>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/eclipse-2-front-cover.jpg" alt="Eclipse Book 2 cover">
+                </div>
+                <!-- </a> -->
+            </div>
+
+            <!-- Slide 5: Eclipse Book 3 (HIDDEN) -->
+            <div class="carousel-slide">
+                <!-- <a href="the-desert-and-the-nile.html"> -->
+                <div>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/eclipse-3-front-cover.jpg" alt="Eclipse Book 3 cover">
+                </div>
+                <!-- </a> -->
+            </div>
+
+            <!-- Slide 6: Eclipse Book 4 (HIDDEN) -->
+            <div class="carousel-slide">
+                <!-- <a href="the-seven-and-the-eclipse.html"> -->
+                <div>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/eclipse-4-front-cover.jpg" alt="Eclipse Book 4 cover">
+                </div>
+                <!-- </a> -->
+            </div>
+            
+            <!-- Slide 7: Rogue Book 1 (HIDDEN) -->
+            <div class="carousel-slide">
+                <!-- <a href="the-echos-first-note.html"> -->
+                <div>
+                    <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/rogue-1-front-cover.jpg" alt="Gentleman Rogue Book 1 cover">
+                </div>
+                <!-- </a> -->
+            </div>
+            
+        </div>
+        <div class="carousel-dots" id="carouselDots">
+            <span class="carousel-dot active" data-index="0"></span>
+            <span class="carousel-dot" data-index="1"></span>
+            <span class="carousel-dot" data-index="2"></span>
+            <span class="carousel-dot" data-index="3"></span>
+            <span class="carousel-dot" data-index="4"></span>
+            <span class="carousel-dot" data-index="5"></span>
+            <span class="carousel-dot" data-index="6"></span>
+        </div>
+    </div>
+
+    <!-- Text Box that updates with the carousel -->
+    <div class="carousel-text-box" id="carouselText">
+        <span class="ct-title" id="ctTitle">The SENTRY Directive</span>
+        <span class="ct-status available" id="ctStatus">Available Now</span>
+    </div>
+
+    <!-- Hero Layout -->
+    <div class="hero-content">
+        <h1>SHAKIL R.</h1>
+        <p class="tagline-primary">Author of Geopolitical Thrillers & Contemporary Historical Fiction</p>
+        <p class="tagline-secondary">Geopolitical Thrillers · Archaeological Mysteries · International Adventures · Opinion Pieces on Geopolitics</p>
+        
+        <p class="bio-teaser">Former military aviation engineer and aerospace strategist, now crafting thrillers where authenticity meets suspense. Author of the Shadow, Eclipse, and Gentleman Rogue series.</p>
+        <div class="hero-cta">
+            <a href="sentry-directive.html" class="btn btn-primary">Explore The SENTRY Directive</a>
+            <a href="author.html" class="btn btn-outline">Meet the Author</a>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURED BOOK -->
+<section class="featured-section" id="featured">
+    <div class="featured-book">
+        <div class="featured-cover">
+            <a href="sentry-directive.html">
+                <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/sentry-directive-cover.jpg" alt="The SENTRY Directive book cover">
+            </a>
+        </div>
+        <div class="featured-info">
+            <div class="series-label">Shadow Series · Book 1 · Available Now</div>
+            <h2>The SENTRY Directive</h2>
+            <p class="hook">Tom Clancy meets John le Carré in an explosive chess match with nuclear stakes. A tense geopolitical thriller about spies, pilots, and the human cost of invisible wars.</p>
+            <div class="btn-row">
+                <a href="sentry-directive.html" class="btn btn-primary">Learn More</a>
+                <a href="https://www.amazon.com/dp/B0H54Z2XWS" target="_blank" class="btn btn-gold">Buy on Amazon</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERIES SHOWCASE -->
+<section class="series-showcase" id="series">
+    <div class="series-showcase-inner">
+        <h2 class="page-title" style="color: var(--text);">Three Series. One Vision.</h2>
+        <p class="page-subtitle">Great thrillers should not only entertain but also inspire curiosity, challenge assumptions, and illuminate the complex forces shaping our world.</p>
+
+        <div class="series-grid">
+            <!-- Shadow Series Card -->
+            <div class="series-card shadow">
+                <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/shadow-series.jpg" alt="The Shadow Series">
+                <h3>The Shadow Series</h3>
+                <div class="series-status">Book 1 Available Now</div>
+                <p>Intelligent geopolitical thrillers exploring diplomacy, espionage, military strategy, and the pursuit of peace in an increasingly unstable world.</p>
+                <a href="books.html#shadow" class="btn btn-outline" style="font-size: 0.9rem; padding: 10px 24px;">Explore</a>
+            </div>
+
+            <!-- Eclipse Series Card -->
+            <div class="series-card eclipse">
+                <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/eclipse-series.jpg" alt="The Eclipse Series">
+                <h3>The Eclipse Series</h3>
+                <div class="series-status">Premiering Late 2026</div>
+                <p>Archaeological thrillers where ancient mysteries, forgotten civilizations, and cutting-edge science collide across continents and centuries.</p>
+                <a href="books.html#eclipse" class="btn btn-outline" style="font-size: 0.9rem; padding: 10px 24px;">Explore</a>
+            </div>
+
+            <!-- Rogue Series Card -->
+            <div class="series-card rogue">
+                <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/rogue-series.jpg" alt="The Gentleman Rogue Series">
+                <h3>The Gentleman Rogue Series</h3>
+                <div class="series-status">Premiering Q3 2027</div>
+                <p>Sophisticated international adventure thrillers featuring art, history, intrigue, and elegant rogues navigating a world of high society and hidden agendas.</p>
+                <a href="books.html#rogue" class="btn btn-outline" style="font-size: 0.9rem; padding: 10px 24px;">Explore</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LATEST NEWS -->
+<section class="news-section" id="news">
+    <h2 class="page-title" style="color: var(--text);">Latest News</h2>
+    <div class="news-card">
+        <h3>Author Interview — Defence Journal</h3>
+        <div class="news-date">May 2026</div>
+        <p>Read Dr. Shakil R.'s in-depth interview with the Defence Journal: "From the Cockpit to the Shadows" — a conversation about the journey from military aviation to thriller fiction.</p>
+        <a href="https://www.defencejournal.com/2026/05/04/from-the-cockpit-to-the-shadows/" target="_blank" class="btn btn-outline mt-1" style="font-size: 0.9rem; padding: 10px 24px;">Read Interview <i class="fas fa-external-link-alt" style="font-size: 0.75rem;"></i></a>
+    </div>
+    <div class="news-card">
+        <h3>The SENTRY Directive — Now Available:— Get The SENTRY Directive absolutely FREE! August 27 & 28, 2026</h3>
+        <div class="news-date">2026</div>
+        <p>The debut geopolitical thriller is now available on Amazon. Also available at select bookstores in Islamabad and Peshawar.</p>
+        <a href="https://www.amazon.com/dp/B0H54Z2XWS" target="_blank" class="btn btn-gold mt-1" style="font-size: 0.9rem; padding: 10px 24px;">Buy on Amazon</a>
+    </div>
+    <div class="news-card">
+        <h3>Eclipse Series — Two Books in Final Polish</h3>
+        <div class="news-date">2026</div>
+        <p>The four-book archaeological thriller series ECLIPSE is underway, with two books now in final polish phase. Series premieres late 2026.</p>
+        <a href="circle.html" class="btn btn-outline mt-1" style="font-size: 0.9rem; padding: 10px 24px;">Join the Readers Circle</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>ABOUT</h3>
+            <p><strong>Dr. Shakil R.,</strong> a former military aviation engineer and academic, blends decades of aerospace, defense, and global strategy experience into gripping thrillers. His debut, <strong>SHADOW: The SENTRY Directive,</strong> delivers authenticity and suspense, launching the Shadow Series. He is currently writing the sequel to The SENTRY Directive, the four-book archaeological thriller series <strong>ECLIPSE</strong> (premiering late 2026), and the <strong>Gentleman Rogue Series</strong> of international adventure thrillers (premiering Q3 2027).</p>
+        </div>
+        <div class="footer-section">
+            <h3>CONNECT</h3>
+            <div class="socials">
+                <a href="https://www.facebook.com/Dr.ShakilR.Sheikh" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com/shakilrauthor" target="_blank" title="X (Twitter)">
+                    <span class="x-icon">X</span>
+                </a>
+                <a href="https://www.instagram.com/shakilrauthor" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>CONTACT</h3>
+            <p>For media inquiries, events, or speaking engagements:</p>
+            <p>shakilr@shakilr.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Shakil R. | Author of Shadow: The SENTRY Directive</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+<!-- CAROUSEL AUTO-PLAY & TEXT UPDATER SCRIPT (Updated for 7 books) -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('carouselTrack');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const ctTitle = document.getElementById('ctTitle');
+    const ctStatus = document.getElementById('ctStatus');
+    
+    let currentIndex = 0;
+    const totalSlides = dots.length;
+    let interval;
+
+    // Data for the moving text box below the carousel (7 items)
+    const slideData = [
+        { title: "The SENTRY Directive", status: "Available Now", statusClass: "available" },
+        { title: "Shadow Book 2", status: "Coming Soon", statusClass: "coming" },
+        { title: "The Jade Compass", status: "Late 2026", statusClass: "coming" },
+        { title: "The Shepherd & The Jaguar", status: "Late 2026", statusClass: "coming" },
+        { title: "The Desert & The Nile", status: "Coming 2027", statusClass: "coming" },
+        { title: "The Seven & The Eclipse", status: "Coming 2027", statusClass: "coming" },
+        { title: "The Echo's First Note", status: "Q3 2027", statusClass: "coming" }
+    ];
+
+    const goToSlide = (index) => {
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+        currentIndex = index;
+
+        // Update the text box below the carousel
+        const data = slideData[index];
+        ctTitle.textContent = data.title;
+        ctStatus.textContent = data.status;
+        ctStatus.className = `ct-status ${data.statusClass}`;
+    };
+
+    const nextSlide = () => {
+        const next = (currentIndex + 1) % totalSlides;
+        goToSlide(next);
+    };
+
+    const startAutoPlay = () => {
+        interval = setInterval(nextSlide, 4000); // Changes slide every 4 seconds
+    };
+
+    const stopAutoPlay = () => {
+        clearInterval(interval);
+    };
+
+    // Click dots to navigate manually
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            stopAutoPlay();
+            goToSlide(parseInt(dot.dataset.index));
+            startAutoPlay(); // Resume auto-play after manual click
+        });
+    });
+
+    // Pause auto-play on hover
+    const carousel = document.getElementById('bookCarousel');
+    carousel.addEventListener('mouseenter', stopAutoPlay);
+    carousel.addEventListener('mouseleave', startAutoPlay);
+
+    // Start the carousel
+    startAutoPlay();
+});
+</script>
+
+</body>
+</html>

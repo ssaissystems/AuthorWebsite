@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO Meta Description -->
+<!-- Primary Meta Tags -->
+<title>The SENTRY Directive — Shadow Book 1 | Shakil R.</title>
+<meta name="description" content="The SENTRY Directive by Shakil R. is a gripping geopolitical thriller. Tom Clancy meets John le Carré in a high-stakes story of spies, pilots, and nuclear brinkmanship. Available now on Amazon.">
+<meta name="author" content="Shakil R.">
+<link rel="canonical" href="https://shakilr.com/sentry-directive">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://shakilr.com/sentry-directive">
+<meta property="og:title" content="The SENTRY Directive — Shadow Book 1 by Shakil R.">
+<meta property="og:description" content="Two broken souls from enemy nations. One phantom mercenary. A countdown to nuclear winter. A tense geopolitical thriller available now on Amazon.">
+<meta property="og:image" content="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/sentry-directive-cover.jpg">
+<meta property="og:image:alt" content="The SENTRY Directive book cover">
+<meta property="og:site_name" content="Shakil R.">
+<meta property="book:author" content="Shakil R.">
+<meta property="book:isbn" content="9798231153626">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The SENTRY Directive — Shadow Book 1 by Shakil R.">
+<meta name="twitter:description" content="A gripping geopolitical thriller about spies, pilots, and the human cost of invisible wars. Available now on Amazon.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/sentry-directive-cover.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "The SENTRY Directive",
+  "url": "https://shakilr.com/sentry-directive",
+  "image": "https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/sentry-directive-cover.jpg",
+  "description": "A tense geopolitical thriller about spies, pilots, and the human cost of invisible wars. Tom Clancy meets John le Carré in an explosive chess match with nuclear stakes.",
+  "author": {
+    "@type": "Person",
+    "name": "Shakil R.",
+    "url": "https://shakilr.com/author"
+  },
+  "isbn": "9798231153626",
+  "bookFormat": "https://schema.org/Paperback",
+  "inLanguage": "en",
+  "genre": ["Thriller", "Geopolitical Thriller", "Espionage"],
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.amazon.com/dp/B0H54Z2XWS",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* -------------------------------------------------- */
+        /* FIXED LEFT SIDEBAR NAV                            */
+        /* -------------------------------------------------- */
+        .fixed-book-nav {
+            position: fixed;
+            top: 120px; /* Offsets below the top navigation bar */
+            left: 20px; /* Sits in the left margin of the screen */
+            width: 220px;
+            background: var(--medium-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            z-index: 99;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .fixed-book-nav h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 0.8rem;
+        }
+
+        .fixed-book-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .fixed-book-nav ul li {
+            margin-bottom: 12px;
+        }
+
+        .fixed-book-nav ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        .fixed-book-nav ul li a:hover,
+        .fixed-book-nav ul li a.active {
+            color: var(--accent);
+            transform: translateX(6px);
+        }
+
+        /* Hide side nav on smaller screens */
+        @media (max-width: 1024px) {
+            .fixed-book-nav {
+                display: none;
+            }
+        }
+
+        /* -------------------------------------------------- */
+        /* MAIN BOOK PAGE CONTENT                            */
+        /* -------------------------------------------------- */
+        .book-page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            /* Because sidebar is fixed, no extra margin needed, it just floats */
+        }
+
+        .book-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .book-header .series-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .book-header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .book-header .subtitle {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: var(--text-muted);
+        }
+
+        /* Book Image & Summary Layout */
+        .book-content {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .book-cover-side {
+            flex: 0 0 350px;
+            text-align: center;
+        }
+
+        .book-cover-side img {
+            max-width: 320px;
+            width: 100%;
+            border-radius: 6px;
+            box-shadow: 0 0 30px rgba(0, 116, 255, 0.3);
+        }
+
+        .book-cover-3d {
+            margin-top: 1.5rem;
+        }
+
+        .book-cover-3d img {
+            max-width: 350px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            border-radius: 4px;
+        }
+
+        .book-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .book-info h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1.6rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .book-info > p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Synopsis (Book Description) */
+        .synopsis {
+            background: var(--medium-bg);
+            padding: 1.5rem 2rem;
+            border-left: 4px solid var(--accent);
+            margin: 1.5rem 0 0 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .synopsis p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .synopsis p:last-child { margin-bottom: 0; }
+
+        /* Characters */
+        .characters-section {
+            margin-top: 2.5rem;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .character-card {
+            background: var(--medium-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 20px rgba(0, 116, 255, 0.15);
+        }
+
+        .character-card h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .character-card p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        /* Buy section */
+        .buy-section {
+            background: var(--medium-bg);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border: 1px solid var(--border-light);
+        }
+
+        .buy-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .buy-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .buy-link.active {
+            background: var(--accent);
+            color: var(--text);
+        }
+
+        .buy-link.active:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 116, 255, 0.4);
+        }
+
+        .buy-link.dormant {
+            background: #1a1a1a;
+            color: #555;
+            border: 1px solid #333;
+            cursor: not-allowed;
+        }
+
+        .buy-link.dormant::after {
+            content: 'Soon';
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            background: #333;
+            border-radius: 10px;
+            margin-left: 4px;
+        }
+
+        .local-stores {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .local-stores h4 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .store-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .store-list li {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            padding: 8px 16px;
+            background: #000;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+        }
+
+        /* Interview link */
+        .interview-link {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(0, 116, 255, 0.08);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 116, 255, 0.15);
+        }
+
+        .interview-link a {
+            color: var(--accent);
+            font-size: 0.95rem;
+            word-break: break-all;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--medium-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 116, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .testimonial-card .quote-mark {
+            font-size: 2rem;
+            color: var(--accent);
+            opacity: 0.3;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-card p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .testimonial-card .reviewer {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .testimonial-card .reviewer-role {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            font-weight: 300;
+        }
+
+        /* Reviews Form Section */
+        .reviews-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--medium-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+        }
+
+        .reviews-intro {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Unified Sub-heading Size (2rem) */
+        .section-title-main {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 2rem;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .section-title-main.left {
+            text-align: left;
+        }
+
+        .interview-link h3, 
+        .testimonials-section h3, 
+        .reviews-section h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 2rem;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .book-content { flex-direction: column; }
+            .book-cover-side { margin: 0 auto; }
+            .character-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-brand">SHAKIL <span>R.</span></a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="author.html">Author</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="circle.html">The Circle</a></li>
+            <li><a href="preorder.html">Pre-Order</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- FIXED LEFT MARGIN SIDEBAR -->
+<nav class="fixed-book-nav" aria-label="Book page navigation">
+    <h4>Jump to</h4>
+    <ul>
+        <li><a href="#characters">Key Characters</a></li>
+        <li><a href="#interview">Author Interview</a></li>
+        <li><a href="#testimonials">Reader Reviews</a></li>
+        <li><a href="#reviews">Add Your Review</a></li>
+    </ul>
+</nav>
+
+<div class="book-page">
+    <!-- Header -->
+    <div class="book-header">
+        <div class="series-label">Shadow Series · Book 1</div>
+        <h1>The SENTRY Directive</h1>
+        <p class="subtitle">A Geopolitical Thriller of Chaos for Profit</p>
+    </div>
+
+    <!-- Book Content (Image + Intro + Synopsis) -->
+    <div class="book-content">
+        <div class="book-cover-side">
+            <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/sentry-directive-cover.jpg" alt="The SENTRY Directive cover">
+            <div class="book-cover-3d">
+                <img src="https://raw.githubusercontent.com/ssaissystems/AuthorWebsite/main/sentry-directive-cover-3d.jpg" alt="The SENTRY Directive 3D wraparound cover">
+            </div>
+        </div>
+        <div class="book-info">
+            <h3>A Geopolitical Thriller of Chaos for Profit</h3>
+            <p>Tom Clancy meets John le Carré in an explosive chess match with nuclear stakes. <strong>The SENTRY Directive</strong> is a tense geopolitical thriller about spies, pilots, and the human cost of invisible wars.</p>
+            
+            <!-- Main Book Description -->
+            <div class="synopsis">
+                <p>When rising Indian diplomat Arvind Pratap Singh is assassinated in a Kabul bombing, a train is attacked in Pakistan's Balochistan province, and coordinated terror strikes hit Kashmir, the fragile India-Pakistan peace process collapses overnight.</p>
+                <p>Amid the escalating crisis, two unlikely figures are drawn into the shadows: Wing Commander Sohail Mirza (call sign Shadow), a decorated Pakistan Air Force pilot hardened by personal tragedy, and Ananya Rao, an Indian diplomat scarred by violence.</p>
+                <p>Evidence points to a covert network orchestrated by Darian Blackwood, a billionaire strategist whose Prometheus Group profits by engineering chaos and instability. Blackwood's mercenary enforcer, codenamed Ahab, executes the dirty work: assassinations, bombings, and disinformation campaigns designed to fracture alliances and keep India and Pakistan locked in perpetual hostility. The goal is not ideology but profit, turning chaos itself into currency.</p>
+                <p>From Islamabad to Geneva's back rooms, Shadow and Ananya pursue the truth through a labyrinth of betrayals. Shadow, haunted by the loss of loved ones to terror, struggles between loyalty to uniform and the moral clarity of exposing his own side's blind spots. Ananya, driven by duty but burdened by her fiancé's murder in Kabul, wrestles with whether cooperation with an enemy pilot is patriotism or betrayal.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="book-page-main">
+
+        <!-- ID: Characters -->
+        <div class="characters-section" id="characters">
+            <h2 class="section-title-main left">Key Characters</h2>
+            <div class="character-grid">
+                <div class="character-card">
+                    <h4>Sohail Mirza (Lead Male Protagonist)</h4>
+                    <p>Fighter pilot in Pakistan Air Force (PAF), call sign <em>Shadow</em>. His presence is more felt than seen. Driven by a conflicting sense of justice, vengeance and duty after losing family in the Jaffar Express terrorist bombing executed by Ahab in September 2018.</p>
+                </div>
+                <div class="character-card">
+                    <h4>Ananya Rao (Lead Female Protagonist)</h4>
+                    <p>A brilliant and intelligent Indian diplomat, haunted by the death of her love Arvind Pratap Singh, killed as collateral in the Kabul bombing executed by Ahab in March 2015. She is looking for justice and peace among nations.</p>
+                </div>
+                <div class="character-card">
+                    <h4>Ahab (Tactical Antagonist)</h4>
+                    <p>A cold, calculating mercenary and tactical genius, orchestrates ruthless attacks on Kabul's embassy, Jaffar Express, Geneva, and Istanbul with surgical precision. Driven by ambition, his enigmatic presence hides a buried past. He evolves into a cunning mastermind, relentlessly pursuing chaos, always eluding capture.</p>
+                </div>
+                <div class="character-card">
+                    <h4>Darian Blackwood (Antagonist — Mastermind)</h4>
+                    <p>Born Christopher Mallory. Cold, calculating chaos strategist, delivering every word with surgical precision and emotional detachment. A silken menace; calm, composed, terrifying in restraint. Commanding, predatory, manipulative, strategically cruel. Refined yet ruthless, blending the polish of wealth with the brutality of a hardened past. Head of Prometheus & Ebony Tree.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ID: Interview -->
+        <div class="interview-link" id="interview">
+            <h3>Read the Author's Interview</h3>
+            <a href="https://www.defencejournal.com/2026/05/04/from-the-cockpit-to-the-shadows/" target="_blank">From the Cockpit to the Shadows — Defence Journal</a>
+        </div>
+
+        <!-- Buy Section -->
+        <div class="buy-section" id="buy">
+            <h2 class="section-title-main">Buy Online</h2>
+            <div class="buy-links">
+                <a href="https://www.amazon.com/dp/B0H54Z2XWS" target="_blank" class="buy-link active"><i class="fab fa-amazon"></i> Amazon</a>
+                <span class="buy-link dormant">Kobo</span>
+                <span class="buy-link dormant">Everand</span>
+                <span class="buy-link dormant">Thalia</span>
+                <span class="buy-link dormant">Angus & Robertson</span>
+                <span class="buy-link dormant">Vivlio</span>
+                <span class="buy-link dormant">Fable</span>
+                <span class="buy-link dormant">Smashwords</span>
+            </div>
+            <div class="local-stores">
+                <h4>Also Locally Available at the Following Bookstores</h4>
+                <ul class="store-list">
+                    <li>Mr. Books (F-6 Super Market, Islamabad)</li>
+                    <li>Cafe Biblio (F-6, Islamabad)</li>
+                    <li>The Book Store (F-7, Islamabad)</li>
+                    <li>The Book Store (Peshawar)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ID: Testimonials -->
+        <div class="testimonials-section" id="testimonials">
+            <h3>What Readers Are Saying</h3>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
+                    <p>“The SENTRY Directive” is a masterfully written and deeply engaging novel. The author seamlessly blends technical expertise, geopolitical insight, and operational knowledge of modern aerial warfare. His ability to connect historical events with current affairs is remarkable, making the narrative both absorbing and authentic. The storytelling, enhanced by vivid background effects, positions the book as a strong candidate for bestseller lists and cinematic adaptation. It’s unique and compelling work likely to attract a wide readership.</p>
+                    <div class="reviewer">— Mohammad Hassan, Air Marshal (Retd), Strategic Thinker & Defense Analyst</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
+                    <p>A first-rate book that feels very close to reality. The technical details are well-handled, the language flows smoothly, and the suspenseful moments kept me fully engaged. An excellent debut effort.</p>
+                    <div class="reviewer">— Kaiser Tufail, Air Commodore (Retd), Author of "In the Ring and on its Feet - PAF in the 1971 Air War"</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
+                    <p>A fast-paced, timely thriller with rich characters and a unique style that pulls you into a world at the pinnacle of a choice that will change two countries. The military aspects are intriguing for the average reader. The prose is deliberate, immersive, and emotionally resonant throughout. It leaves you breathless and wanting to know more. The SENTRY Directive is destined to become a bestseller.</p>
+                    <div class="reviewer">— Sophia Bertron, Author, Editor, Poet</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
+                    <p>A captivating high-tension thriller all the way through, also giving the reader an excellent insight into the most recent techniques of warfare and the machinations of non-state actors in a charged situation.</p>
+                    <div class="reviewer">— Muhammad Murad, Wing Commander (Retd), Literary Critic & General Aviation Professional</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
+                    <p>An absolutely awesome read; visually powerful and cinematic. I can easily imagine it brought to vivid life on screen, ideally by a visionary filmmaker.</p>
+                    <div class="reviewer">— Jamal Hussain, Air Commodore (Retd), Author of "Air Power in South Asia"</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
+                    <p>A timely and explosive thriller that mirrors real-world tensions. Perfect for readers who want both realism and adrenaline. Those who follow Tom Clancy will be hooked.</p>
+                    <div class="reviewer">— Sarmad Hassan Sharif, Writer & Military Historian</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
+                    <p>A globe-trotting classic page-turner packed with action, suspense and a chillingly plausible tale of diplomatic deception, espionage and intrigue on the knife-edge between peace and total war — blending the cerebral tension with the kinetic energy in unstoppable momentum.</p>
+                    <div class="reviewer">— Syed Ahmer Raza, Author of Wings of Engineering Excellence, From Hangars to Horizons.</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
+                    <p>Many congratulations to Air Commodore Shakil R. Sheikh on the publication of The SENTRY Directive. This is a remarkable achievement and a proud moment for Pakistan. Wishing the book great success and a wide international readership.</p>
+                    <div class="reviewer">— Mrs. Motia Bibi, Lecturer (PBS-18, Gazetted Officer), Shaheed Benazir Bhutto Women University, Peshawar, Pakistan</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ID: Reviews -->
+        <div class="reviews-section" id="reviews">
+            <h3>Reviews are Welcome</h3>
+            <p class="reviews-intro">Share your thoughts about <strong>The SENTRY Directive</strong>. Your review will be reviewed and approved before being posted on the site. Thank you for your feedback!</p>
+            
+            <!-- Added 'name' and 'netlify' attributes so Netlify can capture these submissions and email them to you -->
+            <form class="review-form" name="review-submission" netlify method="POST">
+                <div class="form-group">
+                    <label for="reviewer-name">Your Name (Required)</label>
+                    <input type="text" id="reviewer-name" name="name" placeholder="e.g. John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="reviewer-email">Your Email (Required)</label>
+                    <input type="email" id="reviewer-email" name="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="review-rating">Your Rating</label>
+                    <select id="review-rating" name="rating">
+                        <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
+                        <option value="4">⭐⭐⭐⭐ - Very Good</option>
+                        <option value="3">⭐⭐⭐ - Good</option>
+                        <option value="2">⭐⭐ - Fair</option>
+                        <option value="1">⭐ - Poor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="review-content">Your Review (Required)</label>
+                    <textarea id="review-content" name="review" rows="5" placeholder="Tell us what you loved about this book..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Review</button>
+            </form>
+
+            <!-- PLACEHOLDER FOR APPROVED REVIEWS -->
+            <div id="approved-reviews-list" style="margin-top: 3rem; border-top: 1px solid var(--border-light); padding-top: 2rem;">
+                <h4 style="font-family: 'Oswald', sans-serif; color: var(--text); text-align: center; font-size: 1.5rem;">Approved Reader Reviews</h4>
+                <p style="text-align: center; color: var(--text-dim);">Approved reviews will appear here. Use the same HTML structure as the testimonial cards above to display them.</p>
+                <!-- 
+                HOW TO DISPLAY APPROVED REVIEWS:
+                When you receive a review via email/Netlify and approve it, copy/paste a <div class="testimonial-card"> block here. 
+                -->
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>ABOUT</h3>
+            <p><strong>Dr. Shakil R.,</strong> a former military aviation engineer and academic, blends decades of aerospace, defense, and global strategy experience into gripping thrillers. His debut, <strong>The SENTRY Directive,</strong> delivers authenticity and suspense, launching the Shadow Series. He is currently writing the sequel to The SENTRY Directive, the four-book archaeological thriller series <strong>ECLIPSE</strong> (premiering late 2026), and the <strong>Gentleman Rogue Series</strong> of international adventure thrillers (premiering Q3 2027).</p>
+        </div>
+        <div class="footer-section">
+            <h3>CONNECT</h3>
+            <div class="socials">
+                <a href="https://www.facebook.com/Dr.ShakilR.Sheikh" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/shakilrauthor" target="_blank" title="X (Twitter)"><span class="x-icon">X</span></a>
+                <a href="https://www.instagram.com/shakilrauthor" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>CONTACT</h3>
+            <p>For media inquiries, events, or speaking engagements:</p>
+            <p>shakilr@shakilr.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Shakil R. All rights reserved. | Author of Shadow: The SENTRY Directive</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
