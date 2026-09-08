@@ -20,6 +20,37 @@
     <style>
         /* HOME PAGE SPECIFIC STYLES */
 
+        /* Logo in Top-Left Corner */
+        .author-logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            z-index: 1000;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(0, 116, 255, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .author-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 116, 255, 0.5);
+        }
+
+        .author-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Adjust navbar to account for fixed logo */
+        .navbar {
+            padding-left: 120px; /* Make room for the logo */
+        }
+
         /* Radar Hero */
         .hero-section {
             position: relative;
@@ -338,50 +369,36 @@
             .fixed-book-nav {
                 display: none;
             }
+            
+            .author-logo {
+                width: 60px;
+                height: 60px;
+                top: 15px;
+                left: 15px;
+            }
+            
+            .navbar {
+                padding-left: 90px;
+            }
         }
 
         @media (max-width: 768px) {
             .featured-book { flex-direction: column; }
             .series-grid { grid-template-columns: 1fr; }
             .hero-cta { flex-direction: column; }
+            
+            .author-logo {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .navbar {
+                padding-left: 70px;
+            }
         }
     </style>
 </head>
 <body id="top">
-
-<!-- =============================================== -->
-<!-- START FREE PROMO BANNER (Date: Aug 27 & 28, 2026) -->
-<!-- =============================================== -->
-<div style="
-    background: linear-gradient(90deg, #E53935, #C62828);
-    color: #ffffff;
-    text-align: center;
-    padding: clamp(20px, 4vw, 40px) clamp(20px, 4vw, 40px);
-    font-family: 'Oswald', sans-serif;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    letter-spacing: 2px;
-    border-bottom: 4px solid #FFD700;
-">
-    <span style="color: #FFD700; font-weight: 700;">FREE EBOOK:</span> 
-    Get <strong>The SENTRY Directive</strong> absolutely FREE! 
-    <span style="color: #FFD700; font-weight: 700;">August 27 & 28, 2026.</span>
-    <a href="https://www.amazon.com/dp/B0H54Z2XWS" target="_blank" style="
-        display: inline-block;
-        color: #000000;
-        background: #FFD700;
-        padding: 12px 30px;
-        border-radius: 40px;
-        margin-left: 15px;
-        margin-top: 10px;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 1.2rem;
-        letter-spacing: 1px;
-    ">Grab Yours Now</a>
-</div>
-<!-- =============================================== -->
-<!-- END FREE PROMO BANNER                            -->
-<!-- =============================================== -->
 
 <!-- NAVIGATION -->
 <nav class="navbar">
@@ -401,6 +418,11 @@
         </ul>
     </div>
 </nav>
+
+<!-- AUTHOR LOGO - TOP LEFT CORNER -->
+<a href="index.html" class="author-logo" title="Shakil R. - Author">
+    <img src="images/sr-author-logo.jpg" alt="SR Author Logo">
+</a>
 
 <!-- FIXED LEFT MARGIN SIDEBAR -->
 <nav class="fixed-book-nav" aria-label="Page navigation">
@@ -583,7 +605,7 @@
         <a href="https://www.defencejournal.com/2026/05/04/from-the-cockpit-to-the-shadows/" target="_blank" class="btn btn-outline mt-1" style="font-size: 0.9rem; padding: 10px 24px;">Read Interview <i class="fas fa-external-link-alt" style="font-size: 0.75rem;"></i></a>
     </div>
     <div class="news-card">
-        <h3>The SENTRY Directive — Now Available:— Get The SENTRY Directive absolutely FREE! August 27 & 28, 2026</h3>
+        <h3>The SENTRY Directive — Now Available</h3>
         <div class="news-date">2026</div>
         <p>The debut geopolitical thriller is now available on Amazon. Also available at select bookstores in Islamabad and Peshawar.</p>
         <a href="https://www.amazon.com/dp/B0H54Z2XWS" target="_blank" class="btn btn-gold mt-1" style="font-size: 0.9rem; padding: 10px 24px;">Buy on Amazon</a>
